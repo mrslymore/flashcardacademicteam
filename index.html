@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Flashcards</title>
+<style>
+    .flashcard {
+        width: 200px;
+        height: 150px;
+        background-color: #fff;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        padding: 20px;
+        margin: 20px;
+        text-align: center;
+        cursor: pointer;
+    }
+    .flashcard:hover .answer {
+        display: block;
+    }
+    .answer {
+        display: none;
+        color: #007bff;
+        font-weight: bold;
+    }
+</style>
+</head>
+<body>
+
+<div class="flashcard">
+    <div class="question">What is the capital of France?</div>
+    <div class="answer">The capital of France is Paris.</div>
+</div>
+
+<div class="flashcard">
+    <div class="question">What is the tallest mountain in the world?</div>
+    <div class="answer">Mount Everest is the tallest mountain in the world.</div>
+</div>
+
+<script>
+    // JavaScript code to handle hover effect
+    const flashcards = document.querySelectorAll('.flashcard');
+
+    flashcards.forEach(flashcard => {
+        flashcard.addEventListener('mouseenter', () => {
+            flashcard.classList.add('hover');
+        });
+        flashcard.addEventListener('mouseleave', () => {
+            flashcard.classList.remove('hover');
+        });
+    });
+</script>
+
+</body>
+</html>
