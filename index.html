@@ -14,7 +14,18 @@
     }
     
     .folder {
-        margin-bottom: 10px;
+        display: inline-block;
+        padding: 10px 20px;
+        background-color: #007bff;
+        color: #ffffff;
+        border: none;
+        border-radius: 5px;
+        margin-right: 10px;
+        cursor: pointer;
+    }
+    
+    .flashcard-container {
+        margin-top: 20px;
     }
     
     .flashcard {
@@ -26,7 +37,7 @@
         border: 1px solid #ccc;
         border-radius: 5px;
         padding: 20px;
-        margin: 20px;
+        margin: 20px 0;
         text-align: center;
         cursor: pointer;
         transition: background-color 0.3s ease; /* Add transition for smoother hover effect */
@@ -44,22 +55,26 @@
 </head>
 <body>
 
-<div class="folder" onclick="toggleFolder('folder1')">Folder 1</div>
-<div class="folder" onclick="toggleFolder('folder2')">Folder 2</div>
-
-<div class="flashcard folder1">
-    <div class="question">What is the capital of France?</div>
-    <div class="answer">The capital of France is Paris.</div>
+<div>
+    <button class="folder" onclick="toggleFolder('folder1')">Folder 1</button>
+    <button class="folder" onclick="toggleFolder('folder2')">Folder 2</button>
 </div>
 
-<div class="flashcard folder1">
-    <div class="question">Where is Fort Sumter located?</div>
-    <div class="answer">Fort Sumter is located in South Carolina.</div>
-</div>
+<div class="flashcard-container">
+    <div class="flashcard folder1">
+        <div class="question">What is the capital of France?</div>
+        <div class="answer">The capital of France is Paris.</div>
+    </div>
 
-<div class="flashcard folder2">
-    <div class="question">What is the tallest mountain in the world?</div>
-    <div class="answer">Mount Everest is the tallest mountain in the world.</div>
+    <div class="flashcard folder1">
+        <div class="question">Where is Fort Sumter located?</div>
+        <div class="answer">Fort Sumter is located in South Carolina.</div>
+    </div>
+
+    <div class="flashcard folder2">
+        <div class="question">What is the tallest mountain in the world?</div>
+        <div class="answer">Mount Everest is the tallest mountain in the world.</div>
+    </div>
 </div>
 
 <script>
