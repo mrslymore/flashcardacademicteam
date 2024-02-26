@@ -55,66 +55,50 @@
 </head>
 <body>
 
-<div>
-    <button class="folder" onclick="toggleFolder('folder1')">Folder 1</button>
-    <button class="folder" onclick="toggleFolder('folder2')">Folder 2</button>
-</div>
+<div id="folders"></div>
 
-<div class="flashcard-container">
-    <div class="flashcard folder1">
-        <div class="question">What is the capital of France?</div>
-        <div class="answer">The capital of France is Paris.</div>
-    </div>
-
-    <div class="flashcard folder1">
-        <div class="question">Where is Fort Sumter located?</div>
-        <div class="answer">Fort Sumter is located in South Carolina.</div>
-    </div>
-
-    <div class="flashcard folder2">
-        <div class="question">What is the tallest mountain in the world?</div>
-        <div class="answer">Mount Everest is the tallest mountain in the world.</div>
-    </div>
-</div>
+<div class="flashcard-container" id="flashcards"></div>
 
 <script>
-    const folders = document.querySelectorAll('.folder');
-    let currentFolder = null;
+    // Fetch flashcard data from flashcards.json
+    fetch('data/flashcards.json')
+        .then(response => response.json())
+        .then(data => {
+            const folders = document.getElementById('folders');
+            const flashcardContainer = document.getElementById('flashcards');
 
-    function toggleFolder(folderName) {
-        const flashcards = document.querySelectorAll('.flashcard');
-        const flashcardsInFolder = document.querySelectorAll(`.flashcard.${folderName}`);
-        
-        if (currentFolder !== folderName) {
-            // Hide all flashcards
-            flashcards.forEach(flashcard => {
-                flashcard.style.display = 'none';
+            // Generate folder buttons
+            data.folders.forEach(folder => {
+                const folderButton = document.createElement('button');
+                folderButton.textContent = folder.name;
+                folderButton.className = 'folder';
+                folderButton.onclick = () => toggleFolder(folder);
+                folders.appendChild(folderButton);
             });
-            // Show one random flashcard from the selected folder
-            const randomIndex = Math.floor(Math.random() * flashcardsInFolder.length);
-            flashcardsInFolder[randomIndex].style.display = 'block';
-            currentFolder = folderName;
-        } else {
-            // Show a new random flashcard from the selected folder
-            flashcardsInFolder.forEach(flashcard => {
-                flashcard.style.display = 'none';
-            });
-            const randomIndex = Math.floor(Math.random() * flashcardsInFolder.length);
-            flashcardsInFolder[randomIndex].style.display = 'block';
-        }
-    }
-    
-    const flashcards = document.querySelectorAll('.flashcard');
-    flashcards.forEach(flashcard => {
-        flashcard.addEventListener('mouseenter', () => {
-            const answer = flashcard.querySelector('.answer');
-            answer.style.display = 'block';
-        });
-        flashcard.addEventListener('mouseleave', () => {
-            const answer = flashcard.querySelector('.answer');
-            answer.style.display = 'none';
-        });
-    });
+
+            // Function to toggle folder and display flashcards
+            function toggleFolder(folder) {
+                flashcardContainer.innerHTML = ''; // Clear existing flashcards
+
+                // Generate flashcards for the selected folder
+                folder.flashcards.forEach(flashcardData => {
+                    const flashcard = document.createElement('div');
+                    flashcard.className = 'flashcard';
+                    flashcard.innerHTML = `
+                        <div class="question">${flashcardData.question}</div>
+                        <div class="answer">${flashcardData.answer}</div>
+                    `;
+                    flashcard.addEventListener('mouseenter', () => {
+                        flashcard.querySelector('.answer').style.display = 'block';
+                    });
+                    flashcard.addEventListener('mouseleave', () => {
+                        flashcard.querySelector('.answer').style.display = 'none';
+                    });
+                    flashcardContainer.appendChild(flashcard);
+                });
+            }
+        })
+        .catch(error => console.error('Error fetching flashcard data:', error));
 </script>
 
 </body>

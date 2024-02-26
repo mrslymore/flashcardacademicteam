@@ -1,0 +1,26 @@
+{
+    "folders": [
+      {
+        "name": "Folder 1",
+        "flashcards": [
+          {
+            "question": "What is the capital of France?",
+            "answer": "The capital of France is Paris."
+          },
+          {
+            "question": "Where is Fort Sumter located?",
+            "answer": "Fort Sumter is located in South Carolina."
+          }
+        ]
+      },
+      {
+        "name": "Folder 2",
+        "flashcards": [
+          {
+            "question": "What is the tallest mountain in the world?",
+            "answer": "Mount Everest is the tallest mountain in the world."
+          }
+        ]
+      }
+    ]
+  }
