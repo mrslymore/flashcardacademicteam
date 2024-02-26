@@ -70,7 +70,7 @@
             // Generate folder buttons
             data.folders.forEach(folder => {
                 const folderButton = document.createElement('button');
-                folderButton.textContent = folder.name;
+                folderButton.textContent = folder.name === 'Folder 1' ? 'World History' : 'U.S. History';
                 folderButton.className = 'folder';
                 folderButton.onclick = () => toggleFolder(folder);
                 folders.appendChild(folderButton);
