@@ -67,23 +67,39 @@
     let currentFolder = null;
 
     function toggleFolder(folderName) {
+        const flashcards = document.querySelectorAll('.flashcard');
+        const flashcardsInFolder = document.querySelectorAll(`.flashcard.${folderName}`);
+        
         if (currentFolder !== folderName) {
             // Hide all flashcards
-            const flashcards = document.querySelectorAll('.flashcard');
             flashcards.forEach(flashcard => {
                 flashcard.style.display = 'none';
             });
             // Show one random flashcard from the selected folder
-            const flashcardsInFolder = document.querySelectorAll(`.flashcard.${folderName}`);
             const randomIndex = Math.floor(Math.random() * flashcardsInFolder.length);
             flashcardsInFolder[randomIndex].style.display = 'block';
             currentFolder = folderName;
         } else {
-            // If the same folder is clicked again, reveal the answer for the current flashcard
-            const answer = document.querySelector(`.flashcard.${currentFolder} .answer`);
-            answer.style.display = 'block';
+            // Show a new random flashcard from the selected folder
+            flashcardsInFolder.forEach(flashcard => {
+                flashcard.style.display = 'none';
+            });
+            const randomIndex = Math.floor(Math.random() * flashcardsInFolder.length);
+            flashcardsInFolder[randomIndex].style.display = 'block';
         }
     }
+    
+    const flashcards = document.querySelectorAll('.flashcard');
+    flashcards.forEach(flashcard => {
+        flashcard.addEventListener('mouseenter', () => {
+            const answer = flashcard.querySelector('.answer');
+            answer.style.display = 'block';
+        });
+        flashcard.addEventListener('mouseleave', () => {
+            const answer = flashcard.querySelector('.answer');
+            answer.style.display = 'none';
+        });
+    });
 </script>
 
 </body>
