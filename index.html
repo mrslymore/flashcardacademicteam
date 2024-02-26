@@ -166,21 +166,24 @@
         
         const folder = flashcardData.folders.find(folder => folder.name === folderName);
         if (folder) {
-            folder.flashcards.forEach(flashcardData => {
-                const flashcard = document.createElement('div');
-                flashcard.className = 'flashcard';
-                flashcard.innerHTML = `
-                    <div class="question">${flashcardData.question}</div>
-                    <div class="answer">${flashcardData.answer}</div>
-                `;
-                flashcard.addEventListener('mouseenter', () => {
-                    flashcard.querySelector('.answer').style.display = 'block';
-                });
-                flashcard.addEventListener('mouseleave', () => {
-                    flashcard.querySelector('.answer').style.display = 'none';
-                });
-                flashcardContainer.appendChild(flashcard);
+            // Select a random flashcard index
+            const randomIndex = Math.floor(Math.random() * folder.flashcards.length);
+            const flashcardData = folder.flashcards[randomIndex];
+
+            // Create and display the flashcard
+            const flashcard = document.createElement('div');
+            flashcard.className = 'flashcard';
+            flashcard.innerHTML = `
+                <div class="question">${flashcardData.question}</div>
+                <div class="answer">${flashcardData.answer}</div>
+            `;
+            flashcard.addEventListener('mouseenter', () => {
+                flashcard.querySelector('.answer').style.display = 'block';
             });
+            flashcard.addEventListener('mouseleave', () => {
+                flashcard.querySelector('.answer').style.display = 'none';
+            });
+            flashcardContainer.appendChild(flashcard);
         }
     }
 </script>
