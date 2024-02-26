@@ -64,6 +64,7 @@
     fetch('data/flashcards.json')
         .then(response => response.json())
         .then(data => {
+            console.log('Flashcard data:', data); // Log the fetched data
             const folders = document.getElementById('folders');
             const flashcardContainer = document.getElementById('flashcards');
 
