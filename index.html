@@ -161,31 +161,37 @@
     };
 
     function toggleFolder(folderName) {
-        const flashcardContainer = document.getElementById('flashcards');
-        flashcardContainer.innerHTML = ''; // Clear existing flashcards
-        
-        const folder = flashcardData.folders.find(folder => folder.name === folderName);
-        if (folder) {
-            // Select a random flashcard index
-            const randomIndex = Math.floor(Math.random() * folder.flashcards.length);
-            const flashcardData = folder.flashcards[randomIndex];
+    const flashcardContainer = document.getElementById('flashcards');
+    flashcardContainer.innerHTML = ''; // Clear existing flashcards
 
-            // Create and display the flashcard
-            const flashcard = document.createElement('div');
-            flashcard.className = 'flashcard';
-            flashcard.innerHTML = `
-                <div class="question">${flashcardData.question}</div>
-                <div class="answer">${flashcardData.answer}</div>
-            `;
-            flashcard.addEventListener('mouseenter', () => {
-                flashcard.querySelector('.answer').style.display = 'block';
-            });
-            flashcard.addEventListener('mouseleave', () => {
-                flashcard.querySelector('.answer').style.display = 'none';
-            });
-            flashcardContainer.appendChild(flashcard);
-        }
+    console.log('Folder name:', folderName); // Log the folder name
+    
+    const folder = flashcardData.folders.find(folder => folder.name === folderName);
+    console.log('Folder:', folder); // Log the folder data
+    
+    if (folder) {
+        // Select a random flashcard index
+        const randomIndex = Math.floor(Math.random() * folder.flashcards.length);
+        const flashcardData = folder.flashcards[randomIndex];
+
+        console.log('Flashcard data:', flashcardData); // Log the flashcard data
+        
+        // Create and display the flashcard
+        const flashcard = document.createElement('div');
+        flashcard.className = 'flashcard';
+        flashcard.innerHTML = `
+            <div class="question">${flashcardData.question}</div>
+            <div class="answer">${flashcardData.answer}</div>
+        `;
+        flashcard.addEventListener('mouseenter', () => {
+            flashcard.querySelector('.answer').style.display = 'block';
+        });
+        flashcard.addEventListener('mouseleave', () => {
+            flashcard.querySelector('.answer').style.display = 'none';
+        });
+        flashcardContainer.appendChild(flashcard);
     }
+}
 </script>
 
 </body>
