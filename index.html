@@ -12,8 +12,13 @@
         margin: 0; /* Remove default body margin */
         padding: 20px; /* Add padding to the body for better spacing */
     }
-        
+    
+    .folder {
+        margin-bottom: 10px;
+    }
+    
     .flashcard {
+        display: none; /* Hide all flashcards initially */
         width: 200px;
         height: 150px;
         background-color: #fff;
@@ -26,8 +31,8 @@
         cursor: pointer;
         transition: background-color 0.3s ease; /* Add transition for smoother hover effect */
     }
-    .flashcard:hover .answer {
-        display: block; /* Display the answer when hovering over the flashcard */
+    .flashcard:hover {
+        background-color: #f0f0f0; /* Change background color on hover */
     }
     .answer {
         display: none;
@@ -39,33 +44,46 @@
 </head>
 <body>
 
-<div class="flashcard">
+<div class="folder" onclick="toggleFolder('folder1')">Folder 1</div>
+<div class="folder" onclick="toggleFolder('folder2')">Folder 2</div>
+
+<div class="flashcard folder1">
     <div class="question">What is the capital of France?</div>
     <div class="answer">The capital of France is Paris.</div>
 </div>
 
-<div class="flashcard">
+<div class="flashcard folder1">
     <div class="question">Where is Fort Sumter located?</div>
     <div class="answer">Fort Sumter is located in South Carolina.</div>
 </div>
 
-<div class="flashcard">
+<div class="flashcard folder2">
     <div class="question">What is the tallest mountain in the world?</div>
     <div class="answer">Mount Everest is the tallest mountain in the world.</div>
 </div>
 
 <script>
-    // JavaScript code to handle hover effect
-    const flashcards = document.querySelectorAll('.flashcard');
+    const folders = document.querySelectorAll('.folder');
+    let currentFolder = null;
 
-    flashcards.forEach(flashcard => {
-        flashcard.addEventListener('mouseenter', () => {
-            flashcard.classList.add('hover');
-        });
-        flashcard.addEventListener('mouseleave', () => {
-            flashcard.classList.remove('hover');
-        });
-    });
+    function toggleFolder(folderName) {
+        if (currentFolder !== folderName) {
+            // Hide all flashcards
+            const flashcards = document.querySelectorAll('.flashcard');
+            flashcards.forEach(flashcard => {
+                flashcard.style.display = 'none';
+            });
+            // Show one random flashcard from the selected folder
+            const flashcardsInFolder = document.querySelectorAll(`.flashcard.${folderName}`);
+            const randomIndex = Math.floor(Math.random() * flashcardsInFolder.length);
+            flashcardsInFolder[randomIndex].style.display = 'block';
+            currentFolder = folderName;
+        } else {
+            // If the same folder is clicked again, reveal the answer for the current flashcard
+            const answer = document.querySelector(`.flashcard.${currentFolder} .answer`);
+            answer.style.display = 'block';
+        }
+    }
 </script>
 
 </body>
