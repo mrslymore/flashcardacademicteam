@@ -29,18 +29,17 @@
     }
     
     .flashcard {
-    display: none;
-    width: 200px;
-    height: 150px;
-    background-color: #ff0000; /* Change background color to red */
-    color: #000000;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    padding: 20px;
-    margin: 20px 0;
-    text-align: center;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
+        width: 200px;
+        height: 150px;
+        background-color: #fff;
+        color: #000000;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        padding: 20px;
+        margin: 20px 0;
+        text-align: center;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
     }
     
     .flashcard:hover {
@@ -62,136 +61,118 @@
     <button class="folder" onclick="toggleFolder('U.S. History')">U.S. History</button>
 </div>
 
-<div class="flashcard-container" id="flashcards"></div>
+<div class="flashcard-container" id="flashcards">
+    <div class="flashcard" style="display: none;" data-folder="World History">
+        <div class="question">What year did World War I begin?</div>
+        <div class="answer">World War I began in 1914.</div>
+    </div>
+
+    <div class="flashcard" style="display: none;" data-folder="World History">
+        <div class="question">Who was the first emperor of China?</div>
+        <div class="answer">The first emperor of China was Qin Shi Huang.</div>
+    </div>
+
+    <div class="flashcard" style="display: none;" data-folder="World History">
+        <div class="question">Which ancient civilization built the pyramids?</div>
+        <div class="answer">The ancient Egyptians built the pyramids.</div>
+    </div>
+
+    <div class="flashcard" style="display: none;" data-folder="World History">
+        <div class="question">Who was the first female pharaoh of Egypt?</div>
+        <div class="answer">Hatshepsut was the first female pharaoh of Egypt.</div>
+    </div>
+
+    <div class="flashcard" style="display: none;" data-folder="World History">
+        <div class="question">Where was the Magna Carta signed?</div>
+        <div class="answer">The Magna Carta was signed in England.</div>
+    </div>
+
+    <div class="flashcard" style="display: none;" data-folder="World History">
+        <div class="question">Who founded the Mongol Empire?</div>
+        <div class="answer">Genghis Khan founded the Mongol Empire.</div>
+    </div>
+
+    <div class="flashcard" style="display: none;" data-folder="World History">
+        <div class="question">What year did the French Revolution begin?</div>
+        <div class="answer">The French Revolution began in 1789.</div>
+    </div>
+
+    <div class="flashcard" style="display: none;" data-folder="World History">
+        <div class="question">What was the name of the ship that Christopher Columbus sailed to the Americas?</div>
+        <div class="answer">The ship was named the Santa Maria.</div>
+    </div>
+
+    <div class="flashcard" style="display: none;" data-folder="World History">
+        <div class="question">Which ancient civilization invented writing?</div>
+        <div class="answer">The Sumerians invented writing.</div>
+    </div>
+
+    <div class="flashcard" style="display: none;" data-folder="U.S. History">
+        <div class="question">Who wrote the Declaration of Independence?</div>
+        <div class="answer">Thomas Jefferson wrote the Declaration of Independence.</div>
+    </div>
+
+    <div class="flashcard" style="display: none;" data-folder="U.S. History">
+        <div class="question">What was the main issue of the American Civil War?</div>
+        <div class="answer">The main issue of the American Civil War was slavery.</div>
+    </div>
+
+    <div class="flashcard" style="display: none;" data-folder="U.S. History">
+        <div class="question">What was the last battle of the American Revolution?</div>
+        <div class="answer">The last battle of the American Revolution was the Battle of Yorktown.</div>
+    </div>
+
+    <div class="flashcard" style="display: none;" data-folder="U.S. History">
+        <div class="question">Who was the first woman to fly solo across the Atlantic Ocean?</div>
+        <div class="answer">Amelia Earhart was the first woman to fly solo across the Atlantic Ocean.</div>
+    </div>
+
+    <div class="flashcard" style="display: none;" data-folder="U.S. History">
+        <div class="question">What was the name of the first successful English colony in North America?</div>
+        <div class="answer">The first successful English colony in North America was Jamestown.</div>
+    </div>
+
+    <div class="flashcard" style="display: none;" data-folder="U.S. History">
+        <div class="question">What year did the United States enter World War II?</div>
+        <div class="answer">The United States entered World War II in 1941.</div>
+    </div>
+
+    <div class="flashcard" style="display: none;" data-folder="U.S. History">
+        <div class="question">Who was the president during the Civil War?</div>
+        <div class="answer">Abraham Lincoln was the president during the Civil War.</div>
+    </div>
+
+    <div class="flashcard" style="display: none;" data-folder="U.S. History">
+        <div class="question">Where was the Declaration of Independence signed?</div>
+        <div class="answer">The Declaration of Independence was signed in Philadelphia.</div>
+    </div>
+
+    <div class="flashcard" style="display: none;" data-folder="U.S. History">
+        <div class="question">Who was the first president of the United States?</div>
+        <div class="answer">George Washington was the first president of the United States.</div>
+    </div>
+
+    <div class="flashcard" style="display: none;" data-folder="U.S. History">
+        <div class="question">What year was the United States Constitution written?</div>
+        <div class="answer">The United States Constitution was written in 1787.</div>
+    </div>
+</div>
 
 <script>
-    const flashcardData = {
-        "folders": [
-            {
-                "name": "World History",
-                "flashcards": [
-                    {
-                        "question": "What year did World War I begin?",
-                        "answer": "World War I began in 1914."
-                    },
-                    {
-                        "question": "Who was the first emperor of China?",
-                        "answer": "The first emperor of China was Qin Shi Huang."
-                    },
-                    {
-                        "question": "Which ancient civilization built the pyramids?",
-                        "answer": "The ancient Egyptians built the pyramids."
-                    },
-                    {
-                        "question": "Who was the first female pharaoh of Egypt?",
-                        "answer": "Hatshepsut was the first female pharaoh of Egypt."
-                    },
-                    {
-                        "question": "Where was the Magna Carta signed?",
-                        "answer": "The Magna Carta was signed in England."
-                    },
-                    {
-                        "question": "Who was the first European explorer to reach India by sea?",
-                        "answer": "Vasco da Gama was the first European explorer to reach India by sea."
-                    },
-                    {
-                        "question": "What year did the French Revolution begin?",
-                        "answer": "The French Revolution began in 1789."
-                    },
-                    {
-                        "question": "Who founded the Mongol Empire?",
-                        "answer": "Genghis Khan founded the Mongol Empire."
-                    },
-                    {
-                        "question": "What was the name of the ship that Christopher Columbus sailed to the Americas?",
-                        "answer": "The ship was named the Santa Maria."
-                    },
-                    {
-                        "question": "Which ancient civilization invented writing?",
-                        "answer": "The Sumerians invented writing."
-                    }
-                ]
-            },
-            {
-                "name": "U.S. History",
-                "flashcards": [
-                    {
-                        "question": "Who was the first president of the United States?",
-                        "answer": "George Washington was the first president of the United States."
-                    },
-                    {
-                        "question": "Where was the Declaration of Independence signed?",
-                        "answer": "The Declaration of Independence was signed in Philadelphia."
-                    },
-                    {
-                        "question": "What year was the United States Constitution written?",
-                        "answer": "The United States Constitution was written in 1787."
-                    },
-                    {
-                        "question": "Who was the president during the Civil War?",
-                        "answer": "Abraham Lincoln was the president during the Civil War."
-                    },
-                    {
-                        "question": "What year did the United States enter World War II?",
-                        "answer": "The United States entered World War II in 1941."
-                    },
-                    {
-                        "question": "Who was the first woman to fly solo across the Atlantic Ocean?",
-                        "answer": "Amelia Earhart was the first woman to fly solo across the Atlantic Ocean."
-                    },
-                    {
-                        "question": "What was the name of the first successful English colony in North America?",
-                        "answer": "The first successful English colony in North America was Jamestown."
-                    },
-                    {
-                        "question": "Who wrote the Declaration of Independence?",
-                        "answer": "Thomas Jefferson wrote the Declaration of Independence."
-                    },
-                    {
-                        "question": "What was the main issue of the American Civil War?",
-                        "answer": "The main issue of the American Civil War was slavery."
-                    },
-                    {
-                        "question": "What was the last battle of the American Revolution?",
-                        "answer": "The last battle of the American Revolution was the Battle of Yorktown."
-                    }
-                ]
-            }
-        ]
-    };
-
     function toggleFolder(folderName) {
-    const flashcardContainer = document.getElementById('flashcards');
-    flashcardContainer.innerHTML = ''; // Clear existing flashcards
-
-    console.log('Folder name:', folderName); // Log the folder name
-    
-    const folder = flashcardData.folders.find(folder => folder.name === folderName);
-    console.log('Folder:', folder); // Log the folder data
-    
-    if (folder) {
-        // Select a random flashcard index
-        const randomIndex = Math.floor(Math.random() * folder.flashcards.length);
-        const flashcardData = folder.flashcards[randomIndex];
-
-        console.log('Flashcard data:', flashcardData); // Log the flashcard data
+        const flashcardContainer = document.getElementById('flashcards');
+        flashcardContainer.innerHTML = ''; // Clear existing flashcards
         
-        // Create and display the flashcard
-        const flashcard = document.createElement('div');
-        flashcard.className = 'flashcard';
-        flashcard.innerHTML = `
-            <div class="question">${flashcardData.question}</div>
-            <div class="answer">${flashcardData.answer}</div>
-        `;
-        flashcard.addEventListener('mouseenter', () => {
-            flashcard.querySelector('.answer').style.display = 'block';
+        const folder = folderName === 'World History' ? 'World History' : 'U.S. History';
+        const flashcardElems = document.querySelectorAll('.flashcard');
+        flashcardElems.forEach(flashcard => {
+            if (flashcard.dataset.folder === folder || flashcard.dataset.folder === 'Both') {
+                flashcard.style.display = 'block';
+            } else {
+                flashcard.style.display = 'none';
+            }
         });
-        flashcard.addEventListener('mouseleave', () => {
-            flashcard.querySelector('.answer').style.display = 'none';
-        });
-        flashcardContainer.appendChild(flashcard);
     }
-}
 </script>
 
 </body>
