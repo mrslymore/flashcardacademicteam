@@ -5,52 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Flashcards</title>
 <style>
-    body {
-        background-color: #0f0f0f; /* Use a valid hexadecimal color code */
-        color: #ffffff; /* Set text color to white for better contrast */
-        font-family: Arial, sans-serif; /* Use a common font for better readability */
-        margin: 0; /* Remove default body margin */
-        padding: 20px; /* Add padding to the body for better spacing */
-    }
-    
-    .folder {
-        display: inline-block;
-        padding: 10px 20px;
-        background-color: #007bff;
-        color: #ffffff;
-        border: none;
-        border-radius: 5px;
-        margin-right: 10px;
-        cursor: pointer;
-    }
-    
-    .flashcard-container {
-        margin-top: 20px;
-    }
-    
-    .flashcard {
-        display: none; /* Hide all flashcards initially */
-        width: 200px;
-        height: 150px;
-        background-color: #fff;
-        color: #000000; /* Set text color inside flashcard to black */
-        border: 1px solid #ccc;
-        border-radius: 5px;
-        padding: 20px;
-        margin: 20px 0;
-        text-align: center;
-        cursor: pointer;
-        transition: background-color 0.3s ease; /* Add transition for smoother hover effect */
-    }
-    .flashcard:hover {
-        background-color: #f0f0f0; /* Change background color on hover */
-    }
-    .answer {
-        display: none;
-        color: #007bff;
-        font-weight: bold;
-        margin-top: 10px; /* Add margin to separate question and answer */
-    }
+    /* Your CSS styles here */
 </style>
 </head>
 <body>
@@ -61,8 +16,13 @@
 
 <script>
     // Fetch flashcard data from flashcards.json
-    fetch('data/flashcards.json')
-        .then(response => response.json())
+    fetch('flashcards.json') // Update the path to flashcards.json
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            return response.json();
+        })
         .then(data => {
             console.log('Flashcard data:', data); // Log the fetched data
             const folders = document.getElementById('folders');
