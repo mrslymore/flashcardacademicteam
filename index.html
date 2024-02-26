@@ -160,19 +160,18 @@
 
 <script>
     function toggleFolder(folderName) {
-        const flashcardContainer = document.getElementById('flashcards');
-        flashcardContainer.innerHTML = ''; // Clear existing flashcards
-        
-        const folder = folderName === 'World History' ? 'World History' : 'U.S. History';
-        const flashcardElems = document.querySelectorAll('.flashcard');
-        flashcardElems.forEach(flashcard => {
-            if (flashcard.dataset.folder === folder || flashcard.dataset.folder === 'Both') {
-                flashcard.style.display = 'block';
-            } else {
-                flashcard.style.display = 'none';
-            }
-        });
-    }
+    const flashcardContainer = document.getElementById('flashcards');
+    const flashcards = flashcardContainer.querySelectorAll('.flashcard');
+    
+    flashcards.forEach(flashcard => {
+        const folder = flashcard.getAttribute('data-folder');
+        if (folder === folderName) {
+            flashcard.style.display = 'block';
+        } else {
+            flashcard.style.display = 'none';
+        }
+    });
+}
 </script>
 
 </body>
