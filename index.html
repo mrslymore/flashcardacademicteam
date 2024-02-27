@@ -159,6 +159,26 @@
 </div>
 
 <script>
+        // Wait for the DOM to be fully loaded
+    document.addEventListener("DOMContentLoaded", function() {
+        // Get all flashcard elements
+        const flashcards = document.querySelectorAll('.flashcard');
+
+        // Add event listeners to each flashcard
+        flashcards.forEach(flashcard => {
+            flashcard.addEventListener('mouseenter', function() {
+                // When hovered over, find the answer element and display it
+                const answer = flashcard.querySelector('.answer');
+                answer.style.display = 'block';
+            });
+
+            flashcard.addEventListener('mouseleave', function() {
+                // When the mouse leaves, hide the answer element again
+                const answer = flashcard.querySelector('.answer');
+                answer.style.display = 'none';
+            });
+        });
+    });
     function toggleFolder(folderName) {
     const flashcardContainer = document.getElementById('flashcards');
     const flashcards = flashcardContainer.querySelectorAll('.flashcard');
