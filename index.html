@@ -1,58 +1,81 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Flashcards</title>
-<style>
-    body {
-        background-color: #0f0f0f;
-        color: #ffffff;
-        font-family: Arial, sans-serif;
-        margin: 0;
-        padding: 20px;
-    }
-    
-    .folder {
-        display: inline-block;
-        padding: 10px 20px;
-        background-color: #007bff;
-        color: #ffffff;
-        border: none;
-        border-radius: 5px;
-        margin-right: 10px;
-        cursor: pointer;
-    }
-    
-    .flashcard-container {
-        margin-top: 20px;
-    }
-    
-    .flashcard {
-        width: 200px;
-        height: 150px;
-        background-color: #fff;
-        color: #000000;
-        border: 1px solid #ccc;
-        border-radius: 5px;
-        padding: 20px;
-        margin: 20px 0;
-        text-align: center;
-        cursor: pointer;
-        transition: background-color 0.3s ease;
-    }
-    
-    .flashcard:hover {
-        background-color: #f0f0f0;
-    }
-    
-    .answer {
-        display: none;
-        color: #007bff;
-        font-weight: bold;
-        margin-top: 10px;
-    }
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flashcards</title>
+    <style>
+        body {
+            background-color: #0f0f0f;
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .folder {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #ffffff;
+            border: none;
+            border-radius: 5px;
+            margin-right: 10px;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .folder:hover {
+            transform: scale(1.1);
+        }
+
+        .flashcard-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .flashcard {
+            width: 200px;
+            height: 150px;
+            background-color: #ffffff;
+            color: #333333;
+            border: 1px solid #cccccc;
+            border-radius: 8px;
+            padding: 20px;
+            text-align: center;
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .flashcard:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+        }
+
+        .question {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .answer {
+            display: none;
+            font-size: 14px;
+            color: #007bff;
+            font-weight: bold;
+            margin-top: 10px;
+            max-height: 80px;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+
+        .flashcard:hover .answer {
+            display: block;
+            max-height: 1000px;
+        }
+    </style>
 </head>
 <body>
 
@@ -63,186 +86,87 @@
 </div>
 
 <div class="flashcard-container" id="flashcards">
-    <div class="flashcard" style="display: none;" data-folder="World History">
-        <div class="question">What year did World War I begin?</div>
-        <div class="answer">World War I began in 1914.</div>
-    </div>
-
-    <div class="flashcard" style="display: none;" data-folder="World History">
-        <div class="question">Who was the first emperor of China?</div>
-        <div class="answer">The first emperor of China was Qin Shi Huang.</div>
-    </div>
-
-    <div class="flashcard" style="display: none;" data-folder="World History">
-        <div class="question">Which ancient civilization built the pyramids?</div>
-        <div class="answer">The ancient Egyptians built the pyramids.</div>
-    </div>
-
-    <div class="flashcard" style="display: none;" data-folder="World History">
-        <div class="question">Who was the first female pharaoh of Egypt?</div>
-        <div class="answer">Hatshepsut was the first female pharaoh of Egypt.</div>
-    </div>
-
-    <div class="flashcard" style="display: none;" data-folder="World History">
-        <div class="question">Where was the Magna Carta signed?</div>
-        <div class="answer">The Magna Carta was signed in England.</div>
-    </div>
-
-    <div class="flashcard" style="display: none;" data-folder="World History">
-        <div class="question">Who founded the Mongol Empire?</div>
-        <div class="answer">Genghis Khan founded the Mongol Empire.</div>
-    </div>
-
-    <div class="flashcard" style="display: none;" data-folder="World History">
-        <div class="question">What year did the French Revolution begin?</div>
-        <div class="answer">The French Revolution began in 1789.</div>
-    </div>
-
-    <div class="flashcard" style="display: none;" data-folder="World History">
-        <div class="question">What was the name of the ship that Christopher Columbus sailed to the Americas?</div>
-        <div class="answer">The ship was named the Santa Maria.</div>
-    </div>
-
-    <div class="flashcard" style="display: none;" data-folder="World History">
-        <div class="question">Which ancient civilization invented writing?</div>
-        <div class="answer">The Sumerians invented writing.</div>
-    </div>
-
-    <div class="flashcard" style="display: none;" data-folder="U.S. History">
-        <div class="question">Who wrote the Declaration of Independence?</div>
-        <div class="answer">Thomas Jefferson wrote the Declaration of Independence.</div>
-    </div>
-
-    <div class="flashcard" style="display: none;" data-folder="U.S. History">
-        <div class="question">What was the main issue of the American Civil War?</div>
-        <div class="answer">The main issue of the American Civil War was slavery.</div>
-    </div>
-
-    <div class="flashcard" style="display: none;" data-folder="U.S. History">
-        <div class="question">What was the last battle of the American Revolution?</div>
-        <div class="answer">The last battle of the American Revolution was the Battle of Yorktown.</div>
-    </div>
-
-    <div class="flashcard" style="display: none;" data-folder="U.S. History">
-        <div class="question">Who was the first woman to fly solo across the Atlantic Ocean?</div>
-        <div class="answer">Amelia Earhart was the first woman to fly solo across the Atlantic Ocean.</div>
-    </div>
-
-    <div class="flashcard" style="display: none;" data-folder="U.S. History">
-        <div class="question">What was the name of the first successful English colony in North America?</div>
-        <div class="answer">The first successful English colony in North America was Jamestown.</div>
-    </div>
-
-    <div class="flashcard" style="display: none;" data-folder="U.S. History">
-        <div class="question">What year did the United States enter World War II?</div>
-        <div class="answer">The United States entered World War II in 1941.</div>
-    </div>
-
-    <div class="flashcard" style="display: none;" data-folder="U.S. History">
-        <div class="question">Who was the president during the Civil War?</div>
-        <div class="answer">Abraham Lincoln was the president during the Civil War.</div>
-    </div>
-
-    <div class="flashcard" style="display: none;" data-folder="U.S. History">
-        <div class="question">Where was the Declaration of Independence signed?</div>
-        <div class="answer">The Declaration of Independence was signed in Philadelphia.</div>
-    </div>
-
-    <div class="flashcard" style="display: none;" data-folder="U.S. History">
-        <div class="question">Who was the first president of the United States?</div>
-        <div class="answer">George Washington was the first president of the United States.</div>
-    </div>
-
-    <div class="flashcard" style="display: none;" data-folder="U.S. History">
-        <div class="question">What year was the United States Constitution written?</div>
-        <div class="answer">The United States Constitution was written in 1787.</div>
-    </div>
-        <div class="flashcard" style="display: none;" data-folder="Math Definitions">
-        <div class="question">What is the definition of a prime number?</div>
-        <div class="answer">A prime number is a natural number greater than 1 that has no positive divisors other than 1 and itself.</div>
-    </div>
-
-    <div class="flashcard" style="display: none;" data-folder="Math Definitions">
-        <div class="question">Define the term "quadratic equation".</div>
-        <div class="answer">A quadratic equation is a polynomial equation of the second degree, typically in the form \( ax^2 + bx + c = 0 \), where \( a \), \( b \), and \( c \) are constants and \( a \neq 0 \).</div>
-    </div>
-
-    <div class="flashcard" style="display: none;" data-folder="Math Definitions">
-        <div class="question">What is the definition of an acute angle?</div>
-        <div class="answer">An acute angle is an angle that measures less than 90 degrees.</div>
-    </div>
-
-    <div class="flashcard" style="display: none;" data-folder="Math Definitions">
-        <div class="question">Define the term "Pythagorean theorem".</div>
-        <div class="answer">The Pythagorean theorem states that in a right triangle, the square of the length of the hypotenuse (the side opposite the right angle) is equal to the sum of the squares of the lengths of the other two sides.</div>
-    </div>
-
-    <div class="flashcard" style="display: none;" data-folder="Math Definitions">
-        <div class="question">What is the definition of a rational number?</div>
-        <div class="answer">A rational number is any number that can be expressed as the quotient or fraction \( \frac{p}{q} \) of two integers, where \( q \) is not equal to zero.</div>
-    </div>
-
-    <div class="flashcard" style="display: none;" data-folder="Math Definitions">
-        <div class="question">Define the term "function".</div>
-        <div class="answer">A function is a relation between a set of inputs (the domain) and a set of possible outputs (the codomain) such that each input is related to exactly one output.</div>
-    </div>
-
-    <div class="flashcard" style="display: none;" data-folder="Math Definitions">
-        <div class="question">What is the definition of an isosceles triangle?</div>
-        <div class="answer">An isosceles triangle is a triangle that has at least two sides of equal length.</div>
-    </div>
-
-    <div class="flashcard" style="display: none;" data-folder="Math Definitions">
-        <div class="question">Define the term "absolute value".</div>
-        <div class="answer">The absolute value of a real number \( x \), denoted by \( |x| \), is the non-negative value of \( x \) without regard to its sign.</div>
-    </div>
-
-    <div class="flashcard" style="display: none;" data-folder="Math Definitions">
-        <div class="question">What is the definition of a square number?</div>
-        <div class="answer">A square number is an integer that is the square of an integer, in other words, it is the product of some integer with itself.</div>
-    </div>
-
-    <div class="flashcard" style="display: none;" data-folder="Math Definitions">
-        <div class="question">Define the term "congruent triangles".</div>
-        <div class="answer">Congruent triangles are triangles that have the same size and shape, and corresponding sides and angles are equal.</div>
-    </div>
-    
 </div>
 
 <script>
-        // Wait for the DOM to be fully loaded
-    document.addEventListener("DOMContentLoaded", function() {
-        // Get all flashcard elements
-        const flashcards = document.querySelectorAll('.flashcard');
+    const flashcards = {
+        "World History": [
+            { question: "What year did World War I begin?", answer: "World War I began in 1914." },
+            { question: "Who was the first emperor of China?", answer: "The first emperor of China was Qin Shi Huang." },
+            { question: "Which ancient civilization built the pyramids?", answer: "The ancient Egyptians built the pyramids." },
+            { question: "Who was the first female pharaoh of Egypt?", answer: "Hatshepsut was the first female pharaoh of Egypt." },
+            { question: "Where was the Magna Carta signed?", answer: "The Magna Carta was signed in England." },
+            { question: "Who founded the Mongol Empire?", answer: "Genghis Khan founded the Mongol Empire." },
+            { question: "What year did the French Revolution begin?", answer: "The French Revolution began in 1789." },
+            { question: "What was the name of the ship that Christopher Columbus sailed to the Americas?", answer: "The ship was named the Santa Maria." },
+            { question: "Which ancient civilization invented writing?", answer: "The Sumerians invented writing." }
+        ],
+        "U.S. History": [
+            { question: "Who wrote the Declaration of Independence?", answer: "Thomas Jefferson wrote the Declaration of Independence." },
+            { question: "What was the main issue of the American Civil War?", answer: "The main issue of the American Civil War was slavery." },
+            { question: "What was the last battle of the American Revolution?", answer: "The last battle of the American Revolution was the Battle of Yorktown." },
+            { question: "Who was the first woman to fly solo across the Atlantic Ocean?", answer: "Amelia Earhart was the first woman to fly solo across the Atlantic Ocean." },
+            { question: "What was the name of the first successful English colony in North America?", answer: "The first successful English colony in North America was Jamestown." },
+            { question: "What year did the United States enter World War II?", answer: "The United States entered World War II in 1941." },
+            { question: "Who was the president during the Civil War?", answer: "Abraham Lincoln was the president during the Civil War." },
+            { question: "Where was the Declaration of Independence signed?", answer: "The Declaration of Independence was signed in Philadelphia." },
+            { question: "Who was the first president of the United States?", answer: "George Washington was the first president of the United States." },
+            { question: "What year was the United States Constitution written?", answer: "The United States Constitution was written in 1787." }
+        ],
+        "Math Definitions": [
+            { question: "What is the definition of a prime number?", answer: "A prime number is a natural number greater than 1 that has no positive divisors other than 1 and itself." },
+            { question: "Define the term \"quadratic equation\".", answer: "A quadratic equation is a polynomial equation of the second degree, typically in the form ax^2 + bx + c = 0, where a, b, and c are constants and a ≠ 0." },
+            { question: "What is the definition of an acute angle?", answer: "An acute angle is an angle that measures less than 90 degrees." },
+            { question: "Define the term \"Pythagorean theorem\".", answer: "The Pythagorean theorem states that in a right triangle, the square of the length of the hypotenuse (the side opposite the right angle) is equal to the sum of the squares of the lengths of the other two sides." },
+            { question: "What is the definition of a rational number?", answer: "A rational number is any number that can be expressed as the quotient or fraction p/q of two integers, where q is not equal to zero." },
+            { question: "Define the term \"function\".", answer: "A function is a relation between a set of inputs (the domain) and a set of possible outputs (the codomain) such that each input is related to exactly one output." },
+            { question: "What is the definition of an isosceles triangle?", answer: "An isosceles triangle is a triangle that has at least two sides of equal length." },
+            { question: "Define the term \"absolute value\".", answer: "The absolute value of a real number x, denoted by |x|, is the non-negative value of x without regard to its sign." },
+            { question: "What is the definition of a square number?", answer: "A square number is an integer that is the square of an integer, in other words, it is the product of some integer with itself." },
+            { question: "Define the term \"congruent triangles\".", answer: "Congruent triangles are triangles that have the same size and shape, and corresponding sides and angles are equal." }
+        ]
+    };
 
-        // Add event listeners to each flashcard
-        flashcards.forEach(flashcard => {
+    document.addEventListener("DOMContentLoaded", function() {
+        const flashcardContainer = document.getElementById('flashcards');
+        const folderButtons = document.querySelectorAll('.folder');
+
+        folderButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                const folderName = this.textContent.trim();
+                toggleFolder(folderName);
+            });
+        });
+
+        function toggleFolder(folderName) {
+            flashcardContainer.innerHTML = '';
+            const flashcardsInFolder = flashcards[folderName];
+            flashcardsInFolder.forEach(card => {
+                const flashcardElement = createFlashcard(card.question, card.answer);
+                flashcardContainer.appendChild(flashcardElement);
+            });
+        }
+
+        function createFlashcard(question, answer) {
+            const flashcard = document.createElement('div');
+            flashcard.classList.add('flashcard');
+            flashcard.innerHTML = `
+                <div class="question">${question}</div>
+                <div class="answer" style="display: none;">${answer}</div>
+            `;
             flashcard.addEventListener('mouseenter', function() {
-                // When hovered over, find the answer element and display it
-                const answer = flashcard.querySelector('.answer');
-                answer.style.display = 'block';
+                const answerElement = flashcard.querySelector('.answer');
+                answerElement.style.display = 'block';
             });
 
             flashcard.addEventListener('mouseleave', function() {
-                // When the mouse leaves, hide the answer element again
-                const answer = flashcard.querySelector('.answer');
-                answer.style.display = 'none';
+                const answerElement = flashcard.querySelector('.answer');
+                answerElement.style.display = 'none';
             });
-        });
-    });
-    function toggleFolder(folderName) {
-    const flashcardContainer = document.getElementById('flashcards');
-    const flashcards = flashcardContainer.querySelectorAll('.flashcard');
-    
-    flashcards.forEach(flashcard => {
-        const folder = flashcard.getAttribute('data-folder');
-        if (folder === folderName) {
-            flashcard.style.display = 'block';
-        } else {
-            flashcard.style.display = 'none';
+
+            return flashcard;
         }
     });
-}
 </script>
 
 </body>
