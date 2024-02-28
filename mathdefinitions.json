@@ -1,0 +1,12 @@
+[
+    { "question": "What is the definition of a prime number?", "answer": "A prime number is a natural number greater than 1 that has no positive divisors other than 1 and itself." },
+    { "question": "Define the term \"quadratic equation\".", "answer": "A quadratic equation is a polynomial equation of the second degree, typically in the form ax^2 + bx + c = 0, where a, b, and c are constants and a ≠ 0." },
+    { "question": "What is the definition of an acute angle?", "answer": "An acute angle is an angle that measures less than 90 degrees." },
+    { "question": "Define the term \"Pythagorean theorem\".", "answer": "The Pythagorean theorem states that in a right triangle, the square of the length of the hypotenuse (the side opposite the right angle) is equal to the sum of the squares of the lengths of the other two sides." },
+    { "question": "What is the definition of a rational number?", "answer": "A rational number is any number that can be expressed as the quotient or fraction p/q of two integers, where q is not equal to zero." },
+    { "question": "Define the term \"function\".", "answer": "A function is a relation between a set of inputs (the domain) and a set of possible outputs (the codomain) such that each input is related to exactly one output." },
+    { "question": "What is the definition of an isosceles triangle?", "answer": "An isosceles triangle is a triangle that has at least two sides of equal length." },
+    { "question": "Define the term \"absolute value\".", "answer": "The absolute value of a real number x, denoted by |x|, is the non-negative value of x without regard to its sign." },
+    { "question": "What is the definition of a square number?", "answer": "A square number is an integer that is the square of an integer, in other words, it is the product of some integer with itself." },
+    { "question": "Define the term \"congruent triangles\".", "answer": "Congruent triangles are triangles that have the same size and shape, and corresponding sides and angles are equal." }
+]
