@@ -141,10 +141,10 @@
         function toggleFolder(folderName) {
             flashcardContainer.innerHTML = '';
             const flashcardsInFolder = flashcards[folderName];
-            flashcardsInFolder.forEach(card => {
-                const flashcardElement = createFlashcard(card.question, card.answer);
-                flashcardContainer.appendChild(flashcardElement);
-            });
+            const randomIndex = Math.floor(Math.random() * flashcardsInFolder.length);
+            const randomCard = flashcardsInFolder[randomIndex];
+            const flashcardElement = createFlashcard(randomCard.question, randomCard.answer);
+            flashcardContainer.appendChild(flashcardElement);
         }
 
         function createFlashcard(question, answer) {
