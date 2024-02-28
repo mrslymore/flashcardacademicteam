@@ -66,14 +66,6 @@
             color: #007bff;
             font-weight: bold;
             margin-top: 10px;
-            max-height: 80px;
-            overflow: hidden;
-            transition: max-height 0.3s ease;
-        }
-
-        .flashcard:hover .answer {
-            display: block;
-            max-height: 1000px;
         }
     </style>
 </head>
@@ -130,20 +122,31 @@
     document.addEventListener("DOMContentLoaded", function() {
         const flashcardContainer = document.getElementById('flashcards');
         const folderButtons = document.querySelectorAll('.folder');
+        let currentFolder = null;
+        let currentFlashcardIndex = 0;
+        let shuffledFlashcards = [];
+        let answerVisible = false;
 
         folderButtons.forEach(button => {
             button.addEventListener('click', function() {
                 const folderName = this.textContent.trim();
-                toggleFolder(folderName);
+                currentFolder = folderName;
+                shuffledFlashcards = getRandomFlashcards(folderName);
+                currentFlashcardIndex = 0;
+                answerVisible = false;
+                displayFlashcard(shuffledFlashcards[currentFlashcardIndex]);
             });
         });
 
-        function toggleFolder(folderName) {
-            flashcardContainer.innerHTML = '';
+        function getRandomFlashcards(folderName) {
             const flashcardsInFolder = flashcards[folderName];
-            const randomIndex = Math.floor(Math.random() * flashcardsInFolder.length);
-            const randomCard = flashcardsInFolder[randomIndex];
-            const flashcardElement = createFlashcard(randomCard.question, randomCard.answer);
+            const shuffled = flashcardsInFolder.sort(() => Math.random() - 0.5).slice(0, 10);
+            return shuffled;
+        }
+
+        function displayFlashcard(flashcard) {
+            flashcardContainer.innerHTML = '';
+            const flashcardElement = createFlashcard(flashcard.question, flashcard.answer);
             flashcardContainer.appendChild(flashcardElement);
         }
 
@@ -152,16 +155,29 @@
             flashcard.classList.add('flashcard');
             flashcard.innerHTML = `
                 <div class="question">${question}</div>
-                <div class="answer" style="display: none;">${answer}</div>
+                <div class="answer">${answer}</div>
             `;
-            flashcard.addEventListener('mouseenter', function() {
-                const answerElement = flashcard.querySelector('.answer');
-                answerElement.style.display = 'block';
-            });
-
-            flashcard.addEventListener('mouseleave', function() {
-                const answerElement = flashcard.querySelector('.answer');
-                answerElement.style.display = 'none';
+            flashcard.addEventListener('click', function() {
+                if (!answerVisible) {
+                    const answerElement = flashcard.querySelector('.answer');
+                    answerElement.style.display = 'block';
+                    answerVisible = true;
+                } else {
+                    currentFlashcardIndex++;
+                    if (currentFlashcardIndex < 10) {
+                        displayFlashcard(shuffledFlashcards[currentFlashcardIndex]);
+                        const answerElement = flashcard.querySelector('.answer');
+                        answerElement.style.display = 'none';
+                        answerVisible = false;
+                    } else {
+                        shuffledFlashcards = getRandomFlashcards(currentFolder);
+                        currentFlashcardIndex = 0;
+                        displayFlashcard(shuffledFlashcards[currentFlashcardIndex]);
+                        const answerElement = flashcard.querySelector('.answer');
+                        answerElement.style.display = 'none';
+                        answerVisible = false;
+                    }
+                }
             });
 
             return flashcard;
