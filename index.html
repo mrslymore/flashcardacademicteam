@@ -72,15 +72,53 @@
 <body>
 
 <div id="folders">
-    <button class="folder" onclick="toggleFolder('worldhistory.json')">World History</button>
-    <button class="folder" onclick="toggleFolder('ushistory.json')">U.S. History</button>
-    <button class="folder" onclick="toggleFolder('mathdefinitions.json')">Math Definitions</button>
+    <button class="folder" onclick="toggleFolder('World History')">World History</button>
+    <button class="folder" onclick="toggleFolder('U.S. History')">U.S. History</button>
+    <button class="folder" onclick="toggleFolder('Math Definitions')">Math Definitions</button>
 </div>
 
 <div class="flashcard-container" id="flashcards">
 </div>
 
 <script>
+    const flashcards = {
+        "World History": [
+            { question: "What year did World War I begin?", answer: "World War I began in 1914." },
+            { question: "Who was the first emperor of China?", answer: "The first emperor of China was Qin Shi Huang." },
+            { question: "Which ancient civilization built the pyramids?", answer: "The ancient Egyptians built the pyramids." },
+            { question: "Who was the first female pharaoh of Egypt?", answer: "Hatshepsut was the first female pharaoh of Egypt." },
+            { question: "Where was the Magna Carta signed?", answer: "The Magna Carta was signed in England." },
+            { question: "Who founded the Mongol Empire?", answer: "Genghis Khan founded the Mongol Empire." },
+            { question: "What year did the French Revolution begin?", answer: "The French Revolution began in 1789." },
+            { question: "What was the name of the ship that Christopher Columbus sailed to the Americas?", answer: "The ship was named the Santa Maria." },
+            { question: "Which ancient civilization invented writing?", answer: "The Sumerians invented writing." }
+        ],
+        "U.S. History": [
+            { question: "Who wrote the Declaration of Independence?", answer: "Thomas Jefferson wrote the Declaration of Independence." },
+            { question: "What was the main issue of the American Civil War?", answer: "The main issue of the American Civil War was slavery." },
+            { question: "What was the last battle of the American Revolution?", answer: "The last battle of the American Revolution was the Battle of Yorktown." },
+            { question: "Who was the first woman to fly solo across the Atlantic Ocean?", answer: "Amelia Earhart was the first woman to fly solo across the Atlantic Ocean." },
+            { question: "What was the name of the first successful English colony in North America?", answer: "The first successful English colony in North America was Jamestown." },
+            { question: "What year did the United States enter World War II?", answer: "The United States entered World War II in 1941." },
+            { question: "Who was the president during the Civil War?", answer: "Abraham Lincoln was the president during the Civil War." },
+            { question: "Where was the Declaration of Independence signed?", answer: "The Declaration of Independence was signed in Philadelphia." },
+            { question: "Who was the first president of the United States?", answer: "George Washington was the first president of the United States." },
+            { question: "What year was the United States Constitution written?", answer: "The United States Constitution was written in 1787." }
+        ],
+        "Math Definitions": [
+            { question: "What is the definition of a prime number?", answer: "A prime number is a natural number greater than 1 that has no positive divisors other than 1 and itself." },
+            { question: "Define the term \"quadratic equation\".", answer: "A quadratic equation is a polynomial equation of the second degree, typically in the form ax^2 + bx + c = 0, where a, b, and c are constants and a ≠ 0." },
+            { question: "What is the definition of an acute angle?", answer: "An acute angle is an angle that measures less than 90 degrees." },
+            { question: "Define the term \"Pythagorean theorem\".", answer: "The Pythagorean theorem states that in a right triangle, the square of the length of the hypotenuse (the side opposite the right angle) is equal to the sum of the squares of the lengths of the other two sides." },
+            { question: "What is the definition of a rational number?", answer: "A rational number is any number that can be expressed as the quotient or fraction p/q of two integers, where q is not equal to zero." },
+            { question: "Define the term \"function\".", answer: "A function is a relation between a set of inputs (the domain) and a set of possible outputs (the codomain) such that each input is related to exactly one output." },
+            { question: "What is the definition of an isosceles triangle?", answer: "An isosceles triangle is a triangle that has at least two sides of equal length." },
+            { question: "Define the term \"absolute value\".", answer: "The absolute value of a real number x, denoted by |x|, is the non-negative value of x without regard to its sign." },
+            { question: "What is the definition of a square number?", answer: "A square number is an integer that is the square of an integer, in other words, it is the product of some integer with itself." },
+            { question: "Define the term \"congruent triangles\".", answer: "Congruent triangles are triangles that have the same size and shape, and corresponding sides and angles are equal." }
+        ]
+    };
+
     document.addEventListener("DOMContentLoaded", function() {
         const flashcardContainer = document.getElementById('flashcards');
         const folderButtons = document.querySelectorAll('.folder');
@@ -93,20 +131,17 @@
             button.addEventListener('click', function() {
                 const folderName = this.textContent.trim();
                 currentFolder = folderName;
-                fetch(folderName)
-                    .then(response => response.json())
-                    .then(data => {
-                        shuffledFlashcards = shuffle(data);
-                        currentFlashcardIndex = 0;
-                        answerVisible = false;
-                        displayFlashcard(shuffledFlashcards[currentFlashcardIndex]);
-                    })
-                    .catch(error => console.error('Error fetching flashcards:', error));
+                shuffledFlashcards = getRandomFlashcards(folderName);
+                currentFlashcardIndex = 0;
+                answerVisible = false;
+                displayFlashcard(shuffledFlashcards[currentFlashcardIndex]);
             });
         });
 
-        function shuffle(array) {
-            return array.sort(() => Math.random() - 0.5);
+        function getRandomFlashcards(folderName) {
+            const flashcardsInFolder = flashcards[folderName];
+            const shuffled = flashcardsInFolder.sort(() => Math.random() - 0.5).slice(0, 10);
+            return shuffled;
         }
 
         function displayFlashcard(flashcard) {
@@ -135,17 +170,12 @@
                         answerElement.style.display = 'none';
                         answerVisible = false;
                     } else {
-                        fetch(currentFolder)
-                            .then(response => response.json())
-                            .then(data => {
-                                shuffledFlashcards = shuffle(data);
-                                currentFlashcardIndex = 0;
-                                displayFlashcard(shuffledFlashcards[currentFlashcardIndex]);
-                                const answerElement = flashcard.querySelector('.answer');
-                                answerElement.style.display = 'none';
-                                answerVisible = false;
-                            })
-                            .catch(error => console.error('Error fetching flashcards:', error));
+                        shuffledFlashcards = getRandomFlashcards(currentFolder);
+                        currentFlashcardIndex = 0;
+                        displayFlashcard(shuffledFlashcards[currentFlashcardIndex]);
+                        const answerElement = flashcard.querySelector('.answer');
+                        answerElement.style.display = 'none';
+                        answerVisible = false;
                     }
                 }
             });
