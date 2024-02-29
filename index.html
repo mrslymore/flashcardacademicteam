@@ -6,26 +6,32 @@
     <title>Flashcards</title>
     <style>
         body {
-            background-color: #0f0f0f;
+            background-color: #f0f0f0;
             font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        #folders {
+            margin-bottom: 20px;
         }
 
         .folder {
-            display: inline-block;
             padding: 10px 20px;
             background-color: #007bff;
             color: #ffffff;
             border: none;
             border-radius: 5px;
-            margin-right: 10px;
+            margin: 5px;
             cursor: pointer;
             transition: transform 0.3s ease;
         }
 
         .folder:hover {
-            transform: scale(1.1);
+            transform: scale(1.05);
         }
 
         .flashcard-container {
@@ -33,7 +39,6 @@
             flex-wrap: wrap;
             justify-content: center;
             gap: 20px;
-            margin-top: 20px;
         }
 
         .flashcard {
@@ -41,17 +46,18 @@
             height: auto;
             background-color: #ffffff;
             color: #333333;
-            border: 1px solid #cccccc;
+            border: 4px solid #007bff; /* Changed border color */
             border-radius: 8px;
             padding: 20px;
             text-align: center;
             cursor: pointer;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
 
         .flashcard:hover {
             transform: translateY(-5px);
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1); /* Increased shadow on hover */
         }
 
         .question {
@@ -74,9 +80,16 @@
 <div id="folders">
     <button class="folder" onclick="toggleFolder('World History')">World History</button>
     <button class="folder" onclick="toggleFolder('U.S. History')">U.S. History</button>
-    <button class="folder" onclick="toggleFolder('Math Definitions')">Math Definitions</button>
+    <button class="folder" onclick="toggleFolder('Algebra')">Algebra</button>
     <button class="folder" onclick="toggleFolder('Art')">Art</button>
     <button class="folder" onclick="toggleFolder('Computer Science')">Computer Science</button>
+    <button class="folder" onclick="toggleFolder('Biology')">Biology</button>
+    <button class="folder" onclick="toggleFolder('Chemistry')">Chemistry</button>
+    <button class="folder" onclick="toggleFolder('Physics')">Physics</button>
+    <button class="folder" onclick="toggleFolder('American Literature')">American Literature</button>
+    <button class="folder" onclick="toggleFolder('Geography')">Geography</button>
+    <button class="folder" onclick="toggleFolder('Spanish')">Spanish</button>
+    <button class="folder" onclick="toggleFolder('French')">French</button>
 </div>
 
 <div class="flashcard-container" id="flashcards">
@@ -99,16 +112,29 @@
                     fetchFlashcards('worldhistory.json');
                 } else if (folderName === 'U.S. History') {
                     fetchFlashcards('ushistory.json');
+                } else if (folderName === 'Algebra') {
+                    fetchFlashcards('algebra.json');
                 } else if (folderName === 'Art') {
                     fetchFlashcards('art.json');
                 } else if (folderName === 'Computer Science') {
                     fetchFlashcards('computerscience.json');
-                } else {
-                    fetchFlashcards('mathdefinitions.json');
+                } else if (folderName === 'Biology') {
+                    fetchFlashcards('biology.json');
+                } else if (folderName === 'Chemistry') {
+                    fetchFlashcards('chemistry.json');
+                } else if (folderName === 'Physics') {
+                    fetchFlashcards('physics.json');
+                } else if (folderName === 'American Literature') {
+                    fetchFlashcards('americanliterature.json');
+                } else if (folderName === 'Geography') {
+                    fetchFlashcards('geography.json');
+                } else if (folderName === 'Spanish') {
+                    fetchFlashcards('spanish.json');
+                } else if (folderName === 'French') {
+                    fetchFlashcards('french.json');
                 }
             });
         });
-
         function fetchFlashcards(filename) {
             fetch(filename)
                 .then(response => response.json())
