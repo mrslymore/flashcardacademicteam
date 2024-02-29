@@ -37,8 +37,8 @@
         }
 
         .flashcard {
-            width: 200px;
-            height: 150px;
+            width: 15rem;
+            height: auto;
             background-color: #ffffff;
             color: #333333;
             border: 1px solid #cccccc;
@@ -75,6 +75,8 @@
     <button class="folder" onclick="toggleFolder('World History')">World History</button>
     <button class="folder" onclick="toggleFolder('U.S. History')">U.S. History</button>
     <button class="folder" onclick="toggleFolder('Math Definitions')">Math Definitions</button>
+    <button class="folder" onclick="toggleFolder('Art')">Art</button>
+    <button class="folder" onclick="toggleFolder('Computer Science')">Computer Science</button>
 </div>
 
 <div class="flashcard-container" id="flashcards">
@@ -97,6 +99,10 @@
                     fetchFlashcards('worldhistory.json');
                 } else if (folderName === 'U.S. History') {
                     fetchFlashcards('ushistory.json');
+                } else if (folderName === 'Art') {
+                    fetchFlashcards('art.json');
+                } else if (folderName === 'Computer Science') {
+                    fetchFlashcards('computerscience.json');
                 } else {
                     fetchFlashcards('mathdefinitions.json');
                 }

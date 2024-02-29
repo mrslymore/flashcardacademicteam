@@ -1,0 +1,23 @@
+[
+    { "question": "What does HTML stand for?", "answer": "HTML stands for Hypertext Markup Language." },
+    { "question": "What programming language is commonly used for developing Android applications?", "answer": "Java is commonly used for developing Android applications." },
+    { "question": "What is the purpose of CSS in web development?", "answer": "CSS is used for styling and formatting web pages." },
+    { "question": "What is the difference between hardware and software?", "answer": "Hardware refers to physical components of a computer system, while software refers to programs and instructions that run on the hardware." },
+    { "question": "What is the function of a compiler in programming?", "answer": "A compiler translates high-level programming code into machine code that can be executed by a computer." },
+    { "question": "What is the purpose of a database management system (DBMS)?", "answer": "A DBMS is used to manage and organize databases, allowing users to store, retrieve, and manipulate data efficiently." },
+    { "question": "What is an algorithm?", "answer": "An algorithm is a step-by-step procedure or set of rules for solving a problem or accomplishing a task." },
+    { "question": "What is the difference between a stack and a queue in data structures?", "answer": "A stack is a last in, first out (LIFO) data structure, while a queue is a first in, first out (FIFO) data structure." },
+    { "question": "What is the purpose of object-oriented programming (OOP)?", "answer": "OOP is a programming paradigm that uses objects to model real-world entities, allowing for modular, reusable, and maintainable code." },
+    { "question": "What is the role of the operating system in a computer?", "answer": "The operating system manages hardware resources, provides a user interface, and facilitates communication between software and hardware components." },
+    { "question": "What is the difference between HTTP and HTTPS?", "answer": "HTTPS is a secure version of HTTP that encrypts data transmitted between a web browser and a website, providing confidentiality and integrity." },
+    { "question": "What is a variable in programming?", "answer": "A variable is a named storage location in a computer's memory that holds a value which can be changed during program execution." },
+    { "question": "What is the purpose of a loop in programming?", "answer": "A loop is used to repeat a block of code multiple times until a certain condition is met." },
+    { "question": "What is the function of a router in computer networking?", "answer": "A router forwards data packets between computer networks, facilitating communication between devices on different networks." },
+    { "question": "What is the difference between TCP and UDP?", "answer": "TCP (Transmission Control Protocol) is a connection-oriented protocol that ensures reliable data transmission, while UDP (User Datagram Protocol) is a connectionless protocol that provides faster but less reliable data transmission." },
+    { "question": "What is the purpose of a firewall in computer security?", "answer": "A firewall is a network security device that monitors and controls incoming and outgoing network traffic based on predetermined security rules, protecting against unauthorized access and cyber attacks." },
+    { "question": "What is a function in programming?", "answer": "A function is a block of reusable code that performs a specific task or calculation, often with input parameters and a return value." },
+    { "question": "What is the difference between static and dynamic typing in programming languages?", "answer": "Static typing requires variables to be explicitly declared with their data types at compile time, while dynamic typing allows variables to be assigned any data type at runtime." },
+    { "question": "What is the purpose of version control in software development?", "answer": "Version control systems track and manage changes to source code, allowing multiple developers to collaborate on a project, revert to previous versions, and maintain a history of modifications." },
+    { "question": "What is the role of a cache in computer architecture?", "answer": "A cache is a small, fast memory unit that stores frequently accessed data or instructions, reducing the time required to access them from slower memory storage devices." }
+  ]
+  
