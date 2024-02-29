@@ -6,8 +6,8 @@
     <title>Flashcards</title>
     <style>
         body {
-            background-color: #f0f0f0;
-            font-family: 'Arial', sans-serif;
+            background-color: #f8f9fa;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
             padding: 20px;
             display: flex;
@@ -17,6 +17,9 @@
 
         #folders {
             margin-bottom: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
         }
 
         .folder {
@@ -27,7 +30,10 @@
             border-radius: 5px;
             margin: 5px;
             cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
             transition: transform 0.3s ease;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
 
         .folder:hover {
@@ -46,7 +52,7 @@
             height: auto;
             background-color: #ffffff;
             color: #333333;
-            border: 4px solid #007bff; /* Changed border color */
+            border: 4px solid #007bff;
             border-radius: 8px;
             padding: 20px;
             text-align: center;
@@ -57,7 +63,7 @@
 
         .flashcard:hover {
             transform: translateY(-5px);
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1); /* Increased shadow on hover */
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
         }
 
         .question {
@@ -108,33 +114,10 @@
             button.addEventListener('click', function() {
                 const folderName = this.textContent.trim();
                 currentFolder = folderName;
-                if (folderName === 'World History') {
-                    fetchFlashcards('worldhistory.json');
-                } else if (folderName === 'U.S. History') {
-                    fetchFlashcards('ushistory.json');
-                } else if (folderName === 'Algebra') {
-                    fetchFlashcards('algebra.json');
-                } else if (folderName === 'Art') {
-                    fetchFlashcards('art.json');
-                } else if (folderName === 'Computer Science') {
-                    fetchFlashcards('computerscience.json');
-                } else if (folderName === 'Biology') {
-                    fetchFlashcards('biology.json');
-                } else if (folderName === 'Chemistry') {
-                    fetchFlashcards('chemistry.json');
-                } else if (folderName === 'Physics') {
-                    fetchFlashcards('physics.json');
-                } else if (folderName === 'American Literature') {
-                    fetchFlashcards('americanliterature.json');
-                } else if (folderName === 'Geography') {
-                    fetchFlashcards('geography.json');
-                } else if (folderName === 'Spanish') {
-                    fetchFlashcards('spanish.json');
-                } else if (folderName === 'French') {
-                    fetchFlashcards('french.json');
-                }
+                fetchFlashcards(folderName.toLowerCase().replace(' ', '') + '.json');
             });
         });
+
         function fetchFlashcards(filename) {
             fetch(filename)
                 .then(response => response.json())
