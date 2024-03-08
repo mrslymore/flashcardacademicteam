@@ -16,6 +16,38 @@
             align-items: center;
         }
 
+        .dark-mode {
+            background-color: #333;
+            color: #f8f9fa;
+        }
+
+        #category-dropdown {
+            margin-bottom: 20px;
+            width: 80%;
+            max-width: 400px;
+            padding: 10px;
+            font-size: 16px;
+            border: 2px solid #007bff;
+            border-radius: 5px;
+            appearance: none;
+            background-image: url('data:image/svg+xml;utf8,<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M6 9l6 6 6-6"/></svg>');
+            background-repeat: no-repeat;
+            background-position: right 10px top 50%;
+            background-size: 20px;
+            background-color: white;
+            cursor: pointer;
+        }
+
+        #category-dropdown:focus {
+            outline: none;
+            border-color: #0056b3;
+            box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
+        }
+
+        #category-dropdown option {
+            background-color: white;
+        }
+
         #folders {
             margin-bottom: 20px;
             display: flex;
@@ -85,51 +117,82 @@
             font-weight: bold;
             margin-top: 10px;
         }
+
+        #dark-mode-toggle {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            padding: 10px;
+            font-size: 20px;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            background-color: transparent;
+            color: #007bff;
+            transition: color 0.3s ease;
+        }
+
+        #dark-mode-toggle:hover {
+            color: #0056b3;
+        }
     </style>
 </head>
 
 <body>
 
+    <button id="dark-mode-toggle" onclick="toggleDarkMode()">
+        🌞 <!-- Sun emoji -->
+    </button>
+
+    <select id="category-dropdown">
+        <option value="Algebra">Algebra</option>
+        <option value="American Literature">American Literature</option>
+        <option value="American History">American History</option>
+        <option value="Art">Art</option>
+        <option value="Biology">Biology</option>
+        <option value="Chemistry">Chemistry</option>
+        <option value="Computer Science">Computer Science</option>
+        <option value="Egyptian Mythology">Egyptian Mythology</option>
+        <option value="French">French</option>
+        <option value="Geography">Geography</option>
+        <option value="Geometry">Geometry</option>
+        <option value="Greek Mythology">Greek Mythology</option>
+        <option value="Mythology Potpourri">Mythology Potpourri</option>
+        <option value="Norse Mythology">Norse Mythology</option>
+        <option value="Physics">Physics</option>
+        <option value="Roman Mythology">Roman Mythology</option>
+        <option value="Spanish">Spanish</option>
+        <option value="World History">World History</option>
+        <option value="World Literature">World Literature</option>
+    </select>
+
     <div id="folders">
-        <button class="folder" onclick="toggleFolder('Algebra')">Algebra</button>
-        <button class="folder" onclick="toggleFolder('American Literature')">American Literature</button>
-        <button class="folder" onclick="toggleFolder('American History')">American History</button>
-        <button class="folder" onclick="toggleFolder('Art')">Art</button>
-        <button class="folder" onclick="toggleFolder('Biology')">Biology</button>
-        <button class="folder" onclick="toggleFolder('Chemistry')">Chemistry</button>
-        <button class="folder" onclick="toggleFolder('Computer Science')">Computer Science</button>
-        <button class="folder" onclick="toggleFolder('Egyptian Mythology')">Egyptian Mythology</button>
-        <button class="folder" onclick="toggleFolder('French')">French</button>
-        <button class="folder" onclick="toggleFolder('Geography')">Geography</button>
-        <button class="folder" onclick="toggleFolder('Geometry')">Geometry</button>
-        <button class="folder" onclick="toggleFolder('Greek Mythology')">Greek Mythology</button>
-        <button class="folder" onclick="toggleFolder('Mythology Potpourri')">Mythology Potpourri</button>
-        <button class="folder" onclick="toggleFolder('Norse Mythology')">Norse Mythology</button>
-        <button class="folder" onclick="toggleFolder('Physics')">Physics</button>
-        <button class="folder" onclick="toggleFolder('Roman Mythology')">Roman Mythology</button>
-        <button class="folder" onclick="toggleFolder('Spanish')">Spanish</button>
-        <button class="folder" onclick="toggleFolder('World History')">World History</button>
-        <button class="folder" onclick="toggleFolder('World Literature')">World Literature</button>
     </div>
 
     <div class="flashcard-container" id="flashcards">
     </div>
 
     <script>
+        function toggleDarkMode() {
+            document.body.classList.toggle('dark-mode');
+            const darkModeToggle = document.getElementById('dark-mode-toggle');
+            if (document.body.classList.contains('dark-mode')) {
+                darkModeToggle.innerHTML = '🌜'; // Moon emoji
+            } else {
+                darkModeToggle.innerHTML = '🌞'; // Sun emoji
+            }
+        }
+
         document.addEventListener("DOMContentLoaded", function () {
             const flashcardContainer = document.getElementById('flashcards');
-            const folderButtons = document.querySelectorAll('.folder');
-            let currentFolder = null;
+            const categoryDropdown = document.getElementById('category-dropdown');
             let currentFlashcardIndex = 0;
             let shuffledFlashcards = [];
             let answerVisible = false;
 
-            folderButtons.forEach(button => {
-                button.addEventListener('click', function () {
-                    const folderName = this.textContent.trim();
-                    currentFolder = folderName;
-                    fetchFlashcards(folderName.toLowerCase().replace(' ', '') + '.json');
-                });
+            categoryDropdown.addEventListener('change', function () {
+                const selectedCategory = this.value;
+                fetchFlashcards(selectedCategory.toLowerCase().replace(' ', '') + '.json');
             });
 
             function fetchFlashcards(filename) {
@@ -175,7 +238,7 @@
                             answerElement.style.display = 'none';
                             answerVisible = false;
                         } else {
-                            fetchFlashcards(currentFolder.toLowerCase().replace(' ', '') + '.json');
+                            fetchFlashcards(categoryDropdown.value.toLowerCase().replace(' ', '') + '.json');
                         }
                     }
                 });
