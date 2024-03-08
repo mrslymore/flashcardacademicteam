@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -19,7 +20,10 @@
             margin-bottom: 20px;
             display: flex;
             flex-wrap: wrap;
+            justify-content: center;
             gap: 10px;
+            max-width: 90%;
+            overflow-x: auto;
         }
 
         .folder {
@@ -45,6 +49,8 @@
             flex-wrap: wrap;
             justify-content: center;
             gap: 20px;
+            max-width: 90%;
+            overflow-x: auto;
         }
 
         .flashcard {
@@ -81,102 +87,104 @@
         }
     </style>
 </head>
+
 <body>
 
-<div id="folders">
-    <button class="folder" onclick="toggleFolder('Algebra')">Algebra</button>
-    <button class="folder" onclick="toggleFolder('American Literature')">American Literature</button>
-    <button class="folder" onclick="toggleFolder('American History')">American History</button>
-    <button class="folder" onclick="toggleFolder('Art')">Art</button>
-    <button class="folder" onclick="toggleFolder('Biology')">Biology</button>
-    <button class="folder" onclick="toggleFolder('Chemistry')">Chemistry</button>
-    <button class="folder" onclick="toggleFolder('Computer Science')">Computer Science</button>
-    <button class="folder" onclick="toggleFolder('Egyptian Mythology')">Egyptian Mythology</button>
-    <button class="folder" onclick="toggleFolder('French')">French</button>
-    <button class="folder" onclick="toggleFolder('Geography')">Geography</button>
-    <button class="folder" onclick="toggleFolder('Geometry')">Geometry</button>
-    <button class="folder" onclick="toggleFolder('Greek Mythology')">Greek Mythology</button>
-    <button class="folder" onclick="toggleFolder('Mythology Potpourri')">Mythology Potpourri</button>
-    <button class="folder" onclick="toggleFolder('Norse Mythology')">Norse Mythology</button>
-    <button class="folder" onclick="toggleFolder('Physics')">Physics</button>
-    <button class="folder" onclick="toggleFolder('Roman Mythology')">Roman Mythology</button>
-    <button class="folder" onclick="toggleFolder('Spanish')">Spanish</button>
-    <button class="folder" onclick="toggleFolder('World History')">World History</button>
-    <button class="folder" onclick="toggleFolder('World Literature')">World Literature</button>
-</div>
+    <div id="folders">
+        <button class="folder" onclick="toggleFolder('Algebra')">Algebra</button>
+        <button class="folder" onclick="toggleFolder('American Literature')">American Literature</button>
+        <button class="folder" onclick="toggleFolder('American History')">American History</button>
+        <button class="folder" onclick="toggleFolder('Art')">Art</button>
+        <button class="folder" onclick="toggleFolder('Biology')">Biology</button>
+        <button class="folder" onclick="toggleFolder('Chemistry')">Chemistry</button>
+        <button class="folder" onclick="toggleFolder('Computer Science')">Computer Science</button>
+        <button class="folder" onclick="toggleFolder('Egyptian Mythology')">Egyptian Mythology</button>
+        <button class="folder" onclick="toggleFolder('French')">French</button>
+        <button class="folder" onclick="toggleFolder('Geography')">Geography</button>
+        <button class="folder" onclick="toggleFolder('Geometry')">Geometry</button>
+        <button class="folder" onclick="toggleFolder('Greek Mythology')">Greek Mythology</button>
+        <button class="folder" onclick="toggleFolder('Mythology Potpourri')">Mythology Potpourri</button>
+        <button class="folder" onclick="toggleFolder('Norse Mythology')">Norse Mythology</button>
+        <button class="folder" onclick="toggleFolder('Physics')">Physics</button>
+        <button class="folder" onclick="toggleFolder('Roman Mythology')">Roman Mythology</button>
+        <button class="folder" onclick="toggleFolder('Spanish')">Spanish</button>
+        <button class="folder" onclick="toggleFolder('World History')">World History</button>
+        <button class="folder" onclick="toggleFolder('World Literature')">World Literature</button>
+    </div>
 
-<div class="flashcard-container" id="flashcards">
-</div>
+    <div class="flashcard-container" id="flashcards">
+    </div>
 
-<script>
-    document.addEventListener("DOMContentLoaded", function() {
-        const flashcardContainer = document.getElementById('flashcards');
-        const folderButtons = document.querySelectorAll('.folder');
-        let currentFolder = null;
-        let currentFlashcardIndex = 0;
-        let shuffledFlashcards = [];
-        let answerVisible = false;
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const flashcardContainer = document.getElementById('flashcards');
+            const folderButtons = document.querySelectorAll('.folder');
+            let currentFolder = null;
+            let currentFlashcardIndex = 0;
+            let shuffledFlashcards = [];
+            let answerVisible = false;
 
-        folderButtons.forEach(button => {
-            button.addEventListener('click', function() {
-                const folderName = this.textContent.trim();
-                currentFolder = folderName;
-                fetchFlashcards(folderName.toLowerCase().replace(' ', '') + '.json');
+            folderButtons.forEach(button => {
+                button.addEventListener('click', function () {
+                    const folderName = this.textContent.trim();
+                    currentFolder = folderName;
+                    fetchFlashcards(folderName.toLowerCase().replace(' ', '') + '.json');
+                });
             });
-        });
 
-        function fetchFlashcards(filename) {
-            fetch(filename)
-                .then(response => response.json())
-                .then(data => {
-                    shuffledFlashcards = getRandomFlashcards(data);
-                    currentFlashcardIndex = 0;
-                    answerVisible = false;
-                    displayFlashcard(shuffledFlashcards[currentFlashcardIndex]);
-                })
-                .catch(error => console.error('Error fetching flashcard data:', error));
-        }
+            function fetchFlashcards(filename) {
+                fetch(filename)
+                    .then(response => response.json())
+                    .then(data => {
+                        shuffledFlashcards = getRandomFlashcards(data);
+                        currentFlashcardIndex = 0;
+                        answerVisible = false;
+                        displayFlashcard(shuffledFlashcards[currentFlashcardIndex]);
+                    })
+                    .catch(error => console.error('Error fetching flashcard data:', error));
+            }
 
-        function getRandomFlashcards(flashcardsArray) {
-            const shuffled = flashcardsArray.sort(() => Math.random() - 0.5).slice(0, 10);
-            return shuffled;
-        }
+            function getRandomFlashcards(flashcardsArray) {
+                const shuffled = flashcardsArray.sort(() => Math.random() - 0.5).slice(0, 10);
+                return shuffled;
+            }
 
-        function displayFlashcard(flashcard) {
-            flashcardContainer.innerHTML = '';
-            const flashcardElement = createFlashcard(flashcard.question, flashcard.answer);
-            flashcardContainer.appendChild(flashcardElement);
-        }
+            function displayFlashcard(flashcard) {
+                flashcardContainer.innerHTML = '';
+                const flashcardElement = createFlashcard(flashcard.question, flashcard.answer);
+                flashcardContainer.appendChild(flashcardElement);
+            }
 
-        function createFlashcard(question, answer) {
-            const flashcard = document.createElement('div');
-            flashcard.classList.add('flashcard');
-            flashcard.innerHTML = `
+            function createFlashcard(question, answer) {
+                const flashcard = document.createElement('div');
+                flashcard.classList.add('flashcard');
+                flashcard.innerHTML = `
                 <div class="question">${question}</div>
                 <div class="answer">${answer}</div>
             `;
-            flashcard.addEventListener('click', function() {
-                if (!answerVisible) {
-                    const answerElement = flashcard.querySelector('.answer');
-                    answerElement.style.display = 'block';
-                    answerVisible = true;
-                } else {
-                    currentFlashcardIndex++;
-                    if (currentFlashcardIndex < 10) {
-                        displayFlashcard(shuffledFlashcards[currentFlashcardIndex]);
+                flashcard.addEventListener('click', function () {
+                    if (!answerVisible) {
                         const answerElement = flashcard.querySelector('.answer');
-                        answerElement.style.display = 'none';
-                        answerVisible = false;
+                        answerElement.style.display = 'block';
+                        answerVisible = true;
                     } else {
-                        fetchFlashcards(currentFolder.toLowerCase().replace(' ', '') + '.json');
+                        currentFlashcardIndex++;
+                        if (currentFlashcardIndex < 10) {
+                            displayFlashcard(shuffledFlashcards[currentFlashcardIndex]);
+                            const answerElement = flashcard.querySelector('.answer');
+                            answerElement.style.display = 'none';
+                            answerVisible = false;
+                        } else {
+                            fetchFlashcards(currentFolder.toLowerCase().replace(' ', '') + '.json');
+                        }
                     }
-                }
-            });
+                });
 
-            return flashcard;
-        }
-    });
-</script>
+                return flashcard;
+            }
+        });
+    </script>
 
 </body>
+
 </html>
