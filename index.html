@@ -135,6 +135,16 @@
         #dark-mode-toggle:hover {
             color: #0056b3;
         }
+
+        footer {
+            position: fixed;
+            bottom: 20px;
+            left: 0;
+            right: 0;
+            text-align: center;
+            font-size: 14px;
+            color: #555;
+        }
     </style>
 </head>
 
@@ -171,6 +181,10 @@
 
     <div class="flashcard-container" id="flashcards">
     </div>
+
+    <footer>
+        <p>This page has been visited <span id="counter">0</span> times.</p>
+    </footer>
 
     <script>
         function toggleDarkMode() {
@@ -245,6 +259,12 @@
 
                 return flashcard;
             }
+
+            // Increment visit counter
+            let counter = parseInt(localStorage.getItem('visitCounter')) || 0;
+            counter++;
+            localStorage.setItem('visitCounter', counter);
+            document.getElementById('counter').textContent = counter.toString().padStart(5, '0'); // Format the counter with leading zeros
         });
     </script>
 
