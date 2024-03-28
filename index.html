@@ -162,8 +162,10 @@
         <option value="Biology">Biology</option>
         <option value="Chemistry">Chemistry</option>
         <option value="Computer Science">Computer Science</option>
+        <option value="Capitals">Capitals</option>
         <option value="Egyptian Mythology">Egyptian Mythology</option>
         <option value="French">French</option>
+        <option value="Flags">Flags</option>
         <option value="Geography">Geography</option>
         <option value="Geometry">Geometry</option>
         <option value="Greek Mythology">Greek Mythology</option>
@@ -228,17 +230,18 @@
 
             function displayFlashcard(flashcard) {
                 flashcardContainer.innerHTML = '';
-                const flashcardElement = createFlashcard(flashcard.question, flashcard.answer);
+                const flashcardElement = createFlashcard(flashcard.question, flashcard.picture, flashcard.answer);
                 flashcardContainer.appendChild(flashcardElement);
             }
 
-            function createFlashcard(question, answer) {
+            function createFlashcard(question, picture, answer) {
                 const flashcard = document.createElement('div');
                 flashcard.classList.add('flashcard');
                 flashcard.innerHTML = `
-                <div class="question">${question}</div>
-                <div class="answer">${answer}</div>
-            `;
+                    <div class="question">${question}</div>
+                    ${picture ? `<img src="${picture}" alt="Flashcard Image"/>` : ''}
+                    <div class="answer">${answer}</div>
+                `;
                 flashcard.addEventListener('click', function () {
                     if (!answerVisible) {
                         const answerElement = flashcard.querySelector('.answer');
