@@ -201,24 +201,19 @@
   },
   {
     "question": "What is the location or significance of Danube?",
-    "answer": "Danube: Central and southeastern Europe; flows into the
-Black Sea."
+    "answer": "Danube: Central and southeastern Europe; flows into the Black Sea."
   },
   {
-    "question": "Which river is described as: Central and southeastern
-Europe; flows into the Black Sea?",
-    "answer": "Central and southeastern Europe; flows into the Black
-Sea is associated with Danube."
+    "question": "Which river is described as: Central and southeastern Europe; flows into the Black Sea?",
+    "answer": "Central and southeastern Europe; flows into the Black Sea is associated with Danube."
   },
   {
     "question": "What is the location or significance of Rhine?",
     "answer": "Rhine: Western Europe; flows into the North Sea."
   },
   {
-    "question": "Which river is described as: Western Europe; flows
-into the North Sea?",
-    "answer": "Western Europe; flows into the North Sea is associated
-with Rhine."
+    "question": "Which river is described as: Western Europe; flows into the North Sea?",
+    "answer": "Western Europe; flows into the North Sea is associated with Rhine."
   },
   {
     "question": "What is the location or significance of Volga?",
@@ -257,10 +252,8 @@ with Rhine."
     "answer": "Dnieper: Eastern Europe; flows into the Black Sea."
   },
   {
-    "question": "Which river is described as: Eastern Europe; flows
-into the Black Sea?",
-    "answer": "Eastern Europe; flows into the Black Sea is associated
-with Dnieper."
+    "question": "Which river is described as: Eastern Europe; flows into the Black Sea?",
+    "answer": "Eastern Europe; flows into the Black Sea is associated with Dnieper."
   },
   {
     "question": "What is the location or significance of Loire?",
@@ -299,12 +292,11 @@ with Dnieper."
   "answer": "Carpathian Mountains: Central and eastern Europe."
 },
 {
-  "question": "Which mountain/range is described as: Central and
-eastern Europe?",
+  "question": "Which mountain/range is described as: Central and eastern Europe?",
   "answer": "The answer is Carpathian Mountains."
 },
 {
-  "question": "What is the location or significance of Apennines?",
+  "question": "What is the location of Apennines?",
   "answer": "Apennines: Italy."
 },
 {
@@ -324,8 +316,7 @@ eastern Europe?",
   "answer": "Ural Mountains: Traditional Europe–Asia boundary."
 },
 {
-  "question": "Which mountain/range is described as: Traditional
-Europe–Asia boundary?",
+  "question": "Which mountain/range is described as: Traditional Europe–Asia boundary?",
   "answer": "The answer is Ural Mountains."
 },
 {
@@ -333,8 +324,7 @@ Europe–Asia boundary?",
   "answer": "Caucasus Mountains: Between the Black and Caspian seas."
 },
 {
-  "question": "Which mountain/range is described as: Between the Black
-and Caspian seas?",
+  "question": "Which mountain/range is described as: Between the Black and Caspian seas?",
   "answer": "The answer is Caucasus Mountains."
 },
 {
@@ -342,10 +332,8 @@ and Caspian seas?",
   "answer": "Mount Elbrus: Caucasus; often identified as Europe's highest peak."
 },
 {
-  "question": "Which mountain is described as: Caucasus; often
-identified as Europe's highest peak?",
-  "answer": "Caucasus; often identified as Europe's highest peak is
-associated with Mount Elbrus."
+  "question": "Which mountain is described as: Caucasus; often identified as Europe's highest peak?",
+  "answer": "Caucasus; often identified as Europe's highest peak is associated with Mount Elbrus."
 },
 {
   "question": "What is the chemical symbol for Protactinium?",
@@ -800,33 +788,23 @@ associated with Mount Elbrus."
   "answer": "William McKinley served as president from 1897–1901."
 },
 {
-  "question": "How many terms did William McKinley serve, and what is
-notable about the term(s)?",
-  "answer": "William McKinley's terms in office: 1 full term;
-assassinated early in second term."
+  "question": "How many terms did William McKinley serve, and what is notable about the term(s)?",
+  "answer": "William McKinley's terms in office: 1 full term; assassinated early in second term."
 },
 {
   "question": "What was William McKinley's political party?",
   "answer": "William McKinley's political party was Republican."
 },
 {
-  "question": "Who was the First Lady or White House hostess during
-William McKinley's presidency?",
-  "answer": "The First Lady or White House hostess during William
-McKinley's presidency was Ida Saxton McKinley."
+  "question": "Who was the First Lady or White House hostess during William McKinley's presidency?",
+  "answer": "The First Lady or White House hostess during William McKinley's presidency was Ida Saxton McKinley."
 },
 {
-  "question": "What major U.S. and world events occurred during
-William McKinley's presidency?",
-  "answer": "Major U.S. and world events during William McKinley's
-presidency included Spanish–American War (1898); U.S. annexation of
-Hawaii (1898); Philippine–American War began (1899); Boxer Rebellion
-(1899–1901)."
+  "question": "What major U.S. and world events occurred during William McKinley's presidency?",
+  "answer": "Major U.S. and world events during William McKinley's presidency included Spanish–American War (1898); U.S. annexation of Hawaii (1898); Philippine–American War began (1899); Boxer Rebellion (1899–1901)."
 },
 {
-  "question": "Which president served during these events:
-Spanish–American War (1898); U.S. annexation of Hawaii (1898);
-Philippine–American War began (1899); Boxer Rebellion (1899–1901).",
+  "question": "Which president served during these events: Spanish–American War (1898); U.S. annexation of Hawaii (1898); Philippine–American War began (1899); Boxer Rebellion (1899–1901).",
   "answer": "The answer is William McKinley."
 },
 {
@@ -834,32 +812,23 @@ Philippine–American War began (1899); Boxer Rebellion (1899–1901).",
   "answer": "Theodore Roosevelt served as president from 1901–1909."
 },
 {
-  "question": "How many terms did Theodore Roosevelt serve, and what
-is notable about the term(s)?",
-  "answer": "Theodore Roosevelt's terms in office: Succeeded McKinley;
-then elected once."
+  "question": "How many terms did Theodore Roosevelt serve, and what is notable about the term(s)?",
+  "answer": "Theodore Roosevelt's terms in office: Succeeded McKinley; then elected once."
 },
 {
   "question": "What was Theodore Roosevelt's political party?",
   "answer": "Theodore Roosevelt's political party was Republican."
 },
 {
-  "question": "Who was the First Lady or White House hostess during
-Theodore Roosevelt's presidency?",
-  "answer": "The First Lady or White House hostess during Theodore
-Roosevelt's presidency was Edith Roosevelt."
+  "question": "Who was the First Lady or White House hostess during Theodore Roosevelt's presidency?",
+  "answer": "The First Lady or White House hostess during Theodore Roosevelt's presidency was Edith Roosevelt."
 },
 {
-  "question": "What major U.S. and world events occurred during
-Theodore Roosevelt's presidency?",
-  "answer": "Major U.S. and world events during Theodore Roosevelt's
-presidency included Panama Canal construction began under U.S. control
-(1904); Russo-Japanese War (1904–1905); Pure Food and Drug Act (1906);
-Nobel Peace Prize (1906)."
+  "question": "What major U.S. and world events occurred during Theodore Roosevelt's presidency?",
+  "answer": "Major U.S. and world events during Theodore Roosevelt's presidency included Panama Canal construction began under U.S. control (1904); Russo-Japanese War (1904–1905); Pure Food and Drug Act (1906); Nobel Peace Prize (1906)."
 },
 {
-  "question": "Which president served during these events: Panama
-Canal construction began under U.S. control (1904); Russo-Japanese War
+  "question": "Which president served during these events: Panama Canal construction began under U.S. control (1904); Russo-Japanese War
 (1904–1905); Pure Food and Drug Act (1906); Nobel Peace Prize
 (1906).",
   "answer": "The answer is Theodore Roosevelt."
@@ -869,8 +838,7 @@ Canal construction began under U.S. control (1904); Russo-Japanese War
   "answer": "William Howard Taft served as president from 1909–1913."
 },
 {
-  "question": "How many terms did William Howard Taft serve, and what
-is notable about the term(s)?",
+  "question": "How many terms did William Howard Taft serve, and what is notable about the term(s)?",
   "answer": "William Howard Taft's terms in office: 1."
 },
 {
@@ -878,23 +846,15 @@ is notable about the term(s)?",
   "answer": "William Howard Taft's political party was Republican."
 },
 {
-  "question": "Who was the First Lady or White House hostess during
-William Howard Taft's presidency?",
-  "answer": "The First Lady or White House hostess during William
-Howard Taft's presidency was Helen Taft."
+  "question": "Who was the First Lady or White House hostess during William Howard Taft's presidency?",
+  "answer": "The First Lady or White House hostess during William Howard Taft's presidency was Helen Taft."
 },
 {
-  "question": "What major U.S. and world events occurred during
-William Howard Taft's presidency?",
-  "answer": "Major U.S. and world events during William Howard Taft's
-presidency included Mexican Revolution began (1910); Chinese
-Revolution (1911); Titanic sank (1912); antitrust enforcement
-continued."
+  "question": "What major U.S. and world events occurred during William Howard Taft's presidency?",
+  "answer": "Major U.S. and world events during William Howard Taft's presidency included Mexican Revolution began (1910); Chinese Revolution (1911); Titanic sank (1912); antitrust enforcement continued."
 },
 {
-  "question": "Which president served during these events: Mexican
-Revolution began (1910); Chinese Revolution (1911); Titanic sank
-(1912); antitrust enforcement continued.",
+  "question": "Which president served during these events: Mexican Revolution began (1910); Chinese Revolution (1911); Titanic sank (1912); antitrust enforcement continued.",
   "answer": "The answer is William Howard Taft."
 },
 {
@@ -902,8 +862,7 @@ Revolution began (1910); Chinese Revolution (1911); Titanic sank
   "answer": "Woodrow Wilson served as president from 1913–1921."
 },
 {
-  "question": "How many terms did Woodrow Wilson serve, and what is
-notable about the term(s)?",
+  "question": "How many terms did Woodrow Wilson serve, and what is notable about the term(s)?",
   "answer": "Woodrow Wilson's terms in office: 2."
 },
 {
@@ -911,24 +870,15 @@ notable about the term(s)?",
   "answer": "Woodrow Wilson's political party was Democratic."
 },
 {
-  "question": "Who was the First Lady or White House hostess during
-Woodrow Wilson's presidency?",
-  "answer": "The First Lady or White House hostess during Woodrow
-Wilson's presidency was Ellen Wilson; Edith Wilson after Ellen's
-death."
+  "question": "Who was the First Lady or White House hostess during Woodrow Wilson's presidency?",
+  "answer": "The First Lady or White House hostess during Woodrow Wilson's presidency was Ellen Wilson; Edith Wilson after Ellen's death."
 },
 {
-  "question": "What major U.S. and world events occurred during
-Woodrow Wilson's presidency?",
-  "answer": "Major U.S. and world events during Woodrow Wilson's
-presidency included World War I; U.S. entered war in 1917; Russian
-Revolution (1917); Treaty of Versailles (1919); 19th Amendment passed
-Congress (1919)."
+  "question": "What major U.S. and world events occurred during Woodrow Wilson's presidency?",
+  "answer": "Major U.S. and world events during Woodrow Wilson's presidency included World War I; U.S. entered war in 1917; Russian Revolution (1917); Treaty of Versailles (1919); 19th Amendment passed Congress (1919)."
 },
 {
-  "question": "Which president served during these events: World War
-I; U.S. entered war in 1917; Russian Revolution (1917); Treaty of
-Versailles (1919); 19th Amendment passed Congress (1919).",
+  "question": "Which president served during these events: World War I; U.S. entered war in 1917; Russian Revolution (1917); Treaty of Versailles (1919); 19th Amendment passed Congress (1919).",
   "answer": "The answer is Woodrow Wilson."
 },
 {
@@ -936,8 +886,7 @@ Versailles (1919); 19th Amendment passed Congress (1919).",
   "answer": "Warren G. Harding served as president from 1921–1923."
 },
 {
-  "question": "How many terms did Warren G. Harding serve, and what is
-notable about the term(s)?",
+  "question": "How many terms did Warren G. Harding serve, and what is notable about the term(s)?",
   "answer": "Warren G. Harding's terms in office: Partial term; died in office."
 },
 {
@@ -945,22 +894,15 @@ notable about the term(s)?",
   "answer": "Warren G. Harding's political party was Republican."
 },
 {
-  "question": "Who was the First Lady or White House hostess during
-Warren G. Harding's presidency?",
-  "answer": "The First Lady or White House hostess during Warren G.
-Harding's presidency was Florence Harding."
+  "question": "Who was the First Lady or White House hostess during Warren G. Harding's presidency?",
+  "answer": "The First Lady or White House hostess during Warren G. Harding's presidency was Florence Harding."
 },
 {
-  "question": "What major U.S. and world events occurred during Warren
-G. Harding's presidency?",
-  "answer": "Major U.S. and world events during Warren G. Harding's
-presidency included Washington Naval Conference (1921–1922); Irish
-Free State established (1922); Teapot Dome scandal emerged."
+  "question": "What major U.S. and world events occurred during Warren G. Harding's presidency?",
+  "answer": "Major U.S. and world events during Warren G. Harding's presidency included Washington Naval Conference (1921–1922); Irish Free State established (1922); Teapot Dome scandal emerged."
 },
 {
-  "question": "Which president served during these events: Washington
-Naval Conference (1921–1922); Irish Free State established (1922);
-Teapot Dome scandal emerged.",
+  "question": "Which president served during these events: Washington Naval Conference (1921–1922); Irish Free State established (1922); Teapot Dome scandal emerged.",
   "answer": "The answer is Warren G. Harding."
 },
 {
@@ -968,33 +910,23 @@ Teapot Dome scandal emerged.",
   "answer": "Calvin Coolidge served as president from 1923–1929."
 },
 {
-  "question": "How many terms did Calvin Coolidge serve, and what is
-notable about the term(s)?",
-  "answer": "Calvin Coolidge's terms in office: Partial term plus one
-elected term."
+  "question": "How many terms did Calvin Coolidge serve, and what is notable about the term(s)?",
+  "answer": "Calvin Coolidge's terms in office: Partial term plus one elected term."
 },
 {
   "question": "What was Calvin Coolidge's political party?",
   "answer": "Calvin Coolidge's political party was Republican."
 },
 {
-  "question": "Who was the First Lady or White House hostess during
-Calvin Coolidge's presidency?",
-  "answer": "The First Lady or White House hostess during Calvin
-Coolidge's presidency was Grace Coolidge."
+  "question": "Who was the First Lady or White House hostess during Calvin Coolidge's presidency?",
+  "answer": "The First Lady or White House hostess during Calvin Coolidge's presidency was Grace Coolidge."
 },
 {
-  "question": "What major U.S. and world events occurred during Calvin
-Coolidge's presidency?",
-  "answer": "Major U.S. and world events during Calvin Coolidge's
-presidency included Roaring Twenties; Immigration Act (1924); Scopes
-Trial (1925); Lindbergh's transatlantic flight (1927); Kellogg–Briand
-Pact (1928)."
+  "question": "What major U.S. and world events occurred during Calvin Coolidge's presidency?",
+  "answer": "Major U.S. and world events during Calvin Coolidge's presidency included Roaring Twenties; Immigration Act (1924); Scopes Trial (1925); Lindbergh's transatlantic flight (1927); Kellogg–Briand Pact (1928)."
 },
 {
-  "question": "Which president served during these events: Roaring
-Twenties; Immigration Act (1924); Scopes Trial (1925); Lindbergh's
-transatlantic flight (1927); Kellogg–Briand Pact (1928).",
+  "question": "Which president served during these events: Roaring Twenties; Immigration Act (1924); Scopes Trial (1925); Lindbergh's transatlantic flight (1927); Kellogg–Briand Pact (1928).",
   "answer": "The answer is Calvin Coolidge."
 },
 {
@@ -1002,8 +934,7 @@ transatlantic flight (1927); Kellogg–Briand Pact (1928).",
   "answer": "Herbert Hoover served as president from 1929–1933."
 },
 {
-  "question": "How many terms did Herbert Hoover serve, and what is
-notable about the term(s)?",
+  "question": "How many terms did Herbert Hoover serve, and what is notable about the term(s)?",
   "answer": "Herbert Hoover served 1 term in office."
 },
 {
@@ -1011,22 +942,15 @@ notable about the term(s)?",
   "answer": "Herbert Hoover's political party was Republican."
 },
 {
-  "question": "Who was the First Lady or White House hostess during
-Herbert Hoover's presidency?",
-  "answer": "The First Lady or White House hostess during Herbert
-Hoover's presidency was Lou Henry Hoover."
+  "question": "Who was the First Lady or White House hostess during Herbert Hoover's presidency?",
+  "answer": "The First Lady or White House hostess during Herbert Hoover's presidency was Lou Henry Hoover."
 },
 {
-  "question": "What major U.S. and world events occurred during
-Herbert Hoover's presidency?",
-  "answer": "Major U.S. and world events during Herbert Hoover's
-presidency included Stock Market Crash (1929); Great Depression;
-Smoot–Hawley Tariff (1930); Japanese invasion of Manchuria (1931)."
+  "question": "What major U.S. and world events occurred during Herbert Hoover's presidency?",
+  "answer": "Major U.S. and world events during Herbert Hoover's presidency included Stock Market Crash (1929); Great Depression; Smoot–Hawley Tariff (1930); Japanese invasion of Manchuria (1931)."
 },
 {
-  "question": "Which president served during these events: Stock
-Market Crash (1929); Great Depression; Smoot–Hawley Tariff (1930);
-Japanese invasion of Manchuria (1931).",
+  "question": "Which president served during these events: Stock Market Crash (1929); Great Depression; Smoot–Hawley Tariff (1930); Japanese invasion of Manchuria (1931).",
   "answer": "The answer is Herbert Hoover."
 },
 {
@@ -1034,33 +958,23 @@ Japanese invasion of Manchuria (1931).",
   "answer": "Franklin D. Roosevelt served as president from 1933–1945."
 },
 {
-  "question": "How many terms did Franklin D. Roosevelt serve, and
-what is notable about the term(s)?",
-  "answer": "Franklin D. Roosevelt's terms in office: Elected four
-times; died early in fourth term."
+  "question": "How many terms did Franklin D. Roosevelt serve, and what is notable about the term(s)?",
+  "answer": "Franklin D. Roosevelt's terms in office: Elected four times; died early in fourth term."
 },
 {
   "question": "What was Franklin D. Roosevelt's political party?",
   "answer": "Franklin D. Roosevelt's political party was Democratic."
 },
 {
-  "question": "Who was the First Lady or White House hostess during
-Franklin D. Roosevelt's presidency?",
-  "answer": "The First Lady or White House hostess during Franklin D.
-Roosevelt's presidency was Eleanor Roosevelt."
+  "question": "Who was the First Lady or White House hostess during Franklin D. Roosevelt's presidency?",
+  "answer": "The First Lady or White House hostess during Franklin D. Roosevelt's presidency was Eleanor Roosevelt."
 },
 {
-  "question": "What major U.S. and world events occurred during
-Franklin D. Roosevelt's presidency?",
-  "answer": "Major U.S. and world events during Franklin D.
-Roosevelt's presidency included New Deal; Dust Bowl; World War II;
-Pearl Harbor attack (1941); D-Day (1944); Holocaust; United Nations
-planning."
+  "question": "What major U.S. and world events occurred during Franklin D. Roosevelt's presidency?",
+  "answer": "Major U.S. and world events during Franklin D. Roosevelt's presidency included New Deal; Dust Bowl; World War II; Pearl Harbor attack (1941); D-Day (1944); Holocaust; United Nations planning."
 },
 {
-  "question": "Which president served during these events: New Deal;
-Dust Bowl; World War II; Pearl Harbor attack (1941); D-Day (1944);
-Holocaust; United Nations planning.",
+  "question": "Which president served during these events: New Deal; Dust Bowl; World War II; Pearl Harbor attack (1941); D-Day (1944); Holocaust; United Nations planning.",
   "answer": "The answer is Franklin D. Roosevelt."
 },
 {
@@ -1068,33 +982,23 @@ Holocaust; United Nations planning.",
   "answer": "Harry S. Truman served as president from 1945–1953."
 },
 {
-  "question": "How many terms did Harry S. Truman serve, and what is
-notable about the term(s)?",
-  "answer": "Harry S. Truman's terms in office: Partial term plus one
-elected term."
+  "question": "How many terms did Harry S. Truman serve, and what is notable about the term(s)?",
+  "answer": "Harry S. Truman's terms in office: Partial term plus one elected term."
 },
 {
   "question": "What was Harry S. Truman's political party?",
   "answer": "Harry S. Truman's political party was Democratic."
 },
 {
-  "question": "Who was the First Lady or White House hostess during
-Harry S. Truman's presidency?",
-  "answer": "The First Lady or White House hostess during Harry S.
-Truman's presidency was Bess Truman."
+  "question": "Who was the First Lady or White House hostess during Harry S. Truman's presidency?",
+  "answer": "The First Lady or White House hostess during Harry S. Truman's presidency was Bess Truman."
 },
 {
-  "question": "What major U.S. and world events occurred during Harry
-S. Truman's presidency?",
-  "answer": "Major U.S. and world events during Harry S. Truman's
-presidency included End of World War II; atomic bombings of Japan
-(1945); United Nations founded (1945); Cold War; Marshall Plan; Korean
-War; NATO founded (1949)."
+  "question": "What major U.S. and world events occurred during Harry S. Truman's presidency?",
+  "answer": "Major U.S. and world events during Harry S. Truman's presidency included End of World War II; atomic bombings of Japan (1945); United Nations founded (1945); Cold War; Marshall Plan; Korean War; NATO founded (1949)."
 },
 {
-  "question": "Which president served during these events: End of
-World War II; atomic bombings of Japan (1945); United Nations founded
-(1945); Cold War; Marshall Plan; Korean War; NATO founded (1949).",
+  "question": "Which president served during these events: End of World War II; atomic bombings of Japan (1945); United Nations founded (1945); Cold War; Marshall Plan; Korean War; NATO founded (1949).",
   "answer": "The answer is Harry S. Truman."
 },
 {
@@ -1102,8 +1006,7 @@ World War II; atomic bombings of Japan (1945); United Nations founded
   "answer": "Dwight D. Eisenhower served as president from 1953–1961."
 },
 {
-  "question": "How many terms did Dwight D. Eisenhower serve, and what
-is notable about the term(s)?",
+  "question": "How many terms did Dwight D. Eisenhower serve, and what is notable about the term(s)?",
   "answer": "Dwight D. Eisenhower's terms in office: 2."
 },
 {
@@ -1111,24 +1014,15 @@ is notable about the term(s)?",
   "answer": "Dwight D. Eisenhower's political party was Republican."
 },
 {
-  "question": "Who was the First Lady or White House hostess during
-Dwight D. Eisenhower's presidency?",
-  "answer": "The First Lady or White House hostess during Dwight D.
-Eisenhower's presidency was Mamie Eisenhower."
+  "question": "Who was the First Lady or White House hostess during Dwight D. Eisenhower's presidency?",
+  "answer": "The First Lady or White House hostess during Dwight D. Eisenhower's presidency was Mamie Eisenhower."
 },
 {
-  "question": "What major U.S. and world events occurred during Dwight
-D. Eisenhower's presidency?",
-  "answer": "Major U.S. and world events during Dwight D. Eisenhower's
-presidency included Brown v. Board of Education (1954); Montgomery Bus
-Boycott; Sputnik (1957); NASA founded (1958); Interstate Highway Act
-(1956); Cuban Revolution (1959)."
+  "question": "What major U.S. and world events occurred during Dwight D. Eisenhower's presidency?",
+  "answer": "Major U.S. and world events during Dwight D. Eisenhower's presidency included Brown v. Board of Education (1954); Montgomery Bus Boycott; Sputnik (1957); NASA founded (1958); Interstate Highway Act (1956); Cuban Revolution (1959)."
 },
 {
-  "question": "Which president served during these events: Brown v.
-Board of Education (1954); Montgomery Bus Boycott; Sputnik (1957);
-NASA founded (1958); Interstate Highway Act (1956); Cuban Revolution
-(1959).",
+  "question": "Which president served during these events: Brown v. Board of Education (1954); Montgomery Bus Boycott; Sputnik (1957); NASA founded (1958); Interstate Highway Act (1956); Cuban Revolution (1959).",
   "answer": "The answer is Dwight D. Eisenhower."
 },
 {
@@ -1136,8 +1030,7 @@ NASA founded (1958); Interstate Highway Act (1956); Cuban Revolution
   "answer": "John F. Kennedy served as president from 1961–1963."
 },
 {
-  "question": "How many terms did John F. Kennedy serve, and what is
-notable about the term(s)?",
+  "question": "How many terms did John F. Kennedy serve, and what is notable about the term(s)?",
   "answer": "John F. Kennedy's terms in office: Partial term; assassinated."
 },
 {
@@ -1145,23 +1038,15 @@ notable about the term(s)?",
   "answer": "John F. Kennedy's political party was Democratic."
 },
 {
-  "question": "Who was the First Lady or White House hostess during
-John F. Kennedy's presidency?",
-  "answer": "The First Lady or White House hostess during John F.
-Kennedy's presidency was Jacqueline Kennedy."
+  "question": "Who was the First Lady or White House hostess during John F. Kennedy's presidency?",
+  "answer": "The First Lady or White House hostess during John F. Kennedy's presidency was Jacqueline Kennedy."
 },
 {
-  "question": "What major U.S. and world events occurred during John
-F. Kennedy's presidency?",
-  "answer": "Major U.S. and world events during John F. Kennedy's
-presidency included Bay of Pigs invasion (1961); Berlin Wall built
-(1961); Cuban Missile Crisis (1962); Space Race; Vietnam involvement
-expanded."
+  "question": "What major U.S. and world events occurred during John F. Kennedy's presidency?",
+  "answer": "Major U.S. and world events during John F. Kennedy's presidency included Bay of Pigs invasion (1961); Berlin Wall built (1961); Cuban Missile Crisis (1962); Space Race; Vietnam involvement expanded."
 },
 {
-  "question": "Which president served during these events: Bay of Pigs
-invasion (1961); Berlin Wall built (1961); Cuban Missile Crisis
-(1962); Space Race; Vietnam involvement expanded.",
+  "question": "Which president served during these events: Bay of Pigs invasion (1961); Berlin Wall built (1961); Cuban Missile Crisis (1962); Space Race; Vietnam involvement expanded.",
   "answer": "The answer is John F. Kennedy."
 }
 ]
